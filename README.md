@@ -1,9 +1,20 @@
 # Alkarar Arrow website
 
-Static, bilingual website for Alkarar Arrow (سهم الكرار).
+Static, bilingual (Arabic default, English) website for Alkarar Arrow (سهم الكرار).
 
-- `index.html` — Arabic (RTL), default
-- `en/index.html` — English
-- `assets/` — logo and mark
+## Structure
+- `/` Arabic home, `/food/`, `/technology/`, `/contracting/`, `/privacy/`
+- `/en/` English equivalents
+- `assets/` CSS, JS, images. `sitemap.xml`, `robots.txt`, `404.html`, `site.webmanifest`
+- `_headers` security and cache headers (Netlify / Cloudflare Pages)
 
-No build step. Open `index.html` in a browser, or host the folder on any static host (GitHub Pages, Netlify, Cloudflare Pages).
+## Editing
+All page content lives in `build.py`. Edit the text, then run:
+
+    python3 build.py
+
+and commit the regenerated HTML. No dependencies.
+
+## Hosting
+Any static host. The pages use root-relative paths (`/assets/...`), so serve from a domain root
+(e.g. alkarararrow.com), not a sub-folder.

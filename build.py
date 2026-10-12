@@ -6,6 +6,10 @@ HTML page, sitemap.xml and 404.html. No dependencies beyond Python 3.
 """
 import json, os
 
+import hashlib
+def _v(p): return hashlib.md5(open(p,"rb").read()).hexdigest()[:8]
+CSS="/assets/css/style.css?v="+_v("assets/css/style.css")
+JS="/assets/js/main.js?v="+_v("assets/js/main.js")
 SITE = "https://alkarararrow.com"
 EMAIL = "info@alkarararrow.com"
 PHONE_DISPLAY = "00966504779551"
@@ -303,7 +307,7 @@ def head(lang, key, title, desc, extra_ld=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{t["fonts"]}">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="{CSS}">
 <script>document.documentElement.classList.add("js")</script>
 {ld}</head>
 '''
@@ -316,7 +320,7 @@ def header(lang, key):
     return f'''<a class="skip" href="#main">{t["skip"]}</a>
 <header class="site">
   <a class="brand" href="{b}" aria-label="{esc(t["brand"])} - {t["home_label"]}">{logo}<span class="brand-name">{esc(t["brand"])}</span></a>
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-open="{MENU[lang][0]}" data-close="{MENU[lang][1]}"><span class="bars" aria-hidden="true"></span><span class="sr">{MENU[lang][0]}</span></button>
+  <button class="menu-btn" type="button" hidden aria-label="{MENU[lang][0]}" aria-expanded="false" aria-controls="site-nav" data-open="{MENU[lang][0]}" data-close="{MENU[lang][1]}"><span class="bars" aria-hidden="true"></span></button>
   <nav class="main" id="site-nav" aria-label="{'التنقل الرئيسي' if lang == 'ar' else 'Main'}">
     <a href="{b}#about">{t["nav"]["about"]}</a>
     {div_links}
@@ -452,7 +456,7 @@ def home(lang):
   </div>
 </section>
 </main>
-{footer(lang)}<script src="/assets/js/main.js" defer></script>
+{footer(lang)}<script src="{JS}" defer></script>
 </body></html>
 '''
     return head(lang, "home", h["title"], h["desc"], [org_ld(lang)]) + body
@@ -498,7 +502,7 @@ def division(lang, d):
   </div>
 </section>
 </main>
-{footer(lang)}<script src="/assets/js/main.js" defer></script>
+{footer(lang)}<script src="{JS}" defer></script>
 </body></html>
 '''
     return head(lang, d, dv["title"], dv["desc"], [crumb_ld(lang, d), faq_ld(lang, d)]) + body
@@ -511,7 +515,7 @@ def privacy(lang):
 <section class="page-hero"><div class="wrap stack g20"><h1>{p["h1"]}</h1><p class="muted">{p["effective"]}</p></div></section>
 <section><div class="wrap prose">{paras}</div></section>
 </main>
-{footer(lang)}<script src="/assets/js/main.js" defer></script>
+{footer(lang)}<script src="{JS}" defer></script>
 </body></html>
 '''
     return head(lang, "privacy", p["title"], p["desc"], [crumb_ld(lang, "privacy")]) + body
@@ -522,7 +526,7 @@ def notfound():
 <title>الصفحة غير موجودة | Page not found</title><meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&family=IBM+Plex+Sans+Arabic:wght@300;400&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css"></head>
+<link rel="stylesheet" href="{CSS}"></head>
 <body><main id="main" style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px">
 <div class="stack g20" style="align-items:center"><img src="/assets/img/mark.png" alt="" width="84" height="88">
 <h1 style="font-size:44px">الصفحة غير موجودة</h1><p class="muted">Page not found</p>

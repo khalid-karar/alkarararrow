@@ -26,9 +26,10 @@
 (function () {
   var btn = document.querySelector('.menu-btn'), nav = document.getElementById('site-nav');
   if (!btn || !nav) return;
+  btn.hidden = false;
   function set(open) {
     nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.querySelector('.sr').textContent = open ? btn.dataset.close : btn.dataset.open;
+    btn.setAttribute('aria-label', open ? btn.dataset.close : btn.dataset.open);
   }
   btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });

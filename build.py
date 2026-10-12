@@ -83,6 +83,7 @@ T = {
    "work_eyebrow": "من أعمالنا السابقة", "work_h": "مثال: نظام إدارة الاستقدام",
    "work_tag": "مشروع سابق", "work_name": "نظام إدارة الاستقدام",
    "work_p": "نظام متكامل لإدارة عمليات الاستقدام، بُني من الصفر ليناسب طبيعة عمل شركات الاستقدام، ونُفّذ لإحدى الشركات العاملة في هذا المجال.",
+   "shot1_alt": "لوحة متابعة نظام إدارة الاستقدام تعرض مؤشرات العقود والعمالة", "shot2_alt": "شاشة إدارة العمالة في نظام الاستقدام مع الفلاتر والبحث", "shot_note": "لقطات من النظام، مع إخفاء البيانات الحقيقية.",
    "work_feats": [("مصمم حسب الطلب", "يُبنى على إجراءات الشركة، لا العكس."),
                   ("على خوادم العميل", "يمكن نشره داخل بيئة الشركة لتبقى بياناتها عندها."),
                   ("هوية العميل", "يقبل شعار الشركة وألوانها ليظهر باسمها.")],
@@ -107,12 +108,14 @@ T = {
   "title": "سياسة الخصوصية | سهم الكرار",
   "desc": "كيف تتعامل سهم الكرار مع البيانات التي تصلها عبر البريد الإلكتروني وموقعها.",
   "h1": "سياسة الخصوصية",
+  "effective": "تاريخ السريان: أكتوبر 2026",
   "body": [
-   ("البيانات التي نجمعها", "لا يجمع هذا الموقع بيانات من الزوار تلقائيًا. إذا راسلتنا عبر البريد الإلكتروني أو الهاتف، فإننا نستلم الاسم وبيانات التواصل وما تكتبه لنا."),
-   ("كيف نستخدمها", "نستخدم هذه البيانات للرد على طلبك وتقديم العرض أو الخدمة المطلوبة، ولا نبيعها ولا نشاركها لأغراض تسويقية."),
-   ("مدة الاحتفاظ", "نحتفظ بالمراسلات المدة اللازمة لخدمتك والالتزام بالأنظمة المعمول بها، ثم نحذفها."),
-   ("حقوقك", "يحق لك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها وفق نظام حماية البيانات الشخصية في المملكة."),
-   ("للتواصل", "لأي استفسار عن الخصوصية راسلنا على " + EMAIL + "."),
+   ("1. من نحن", "تُشغّل سهم الكرار (الرياض، المملكة العربية السعودية) هذا الموقع والخدمات المرتبطة به. وتشير عبارات «سهم الكرار» و«نحن» إلى هذه الجهة."),
+   ("2. المعلومات التي نجمعها", "لا يجمع هذا الموقع بيانات شخصية من الزوار تلقائيًا، ولا يستخدم ملفات تعريف الارتباط. إذا راسلتنا عبر البريد الإلكتروني أو الهاتف، فإننا نستلم الاسم وجهة العمل وبيانات التواصل ومضمون استفسارك."),
+   ("3. كيف نستخدم معلوماتك", "نستخدم المعلومات التي تصلنا للرد على استفسارك وتقييم فرص التعاون وحفظ سجل المراسلات المؤسسية. ولا نبيع بياناتك الشخصية ولا نؤجرها ولا نشاركها مع أطراف ثالثة لأغراض تسويقية."),
+   ("4. مكان معالجة البيانات", "تُعالج البيانات التي تصلنا عبر هذا الموقع وفق متطلبات نظام حماية البيانات الشخصية (PDPL) وإرشادات الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا) المعمول بها."),
+   ("5. حقوقك", "يحق لك طلب الاطلاع على بياناتك الشخصية أو تصحيحها أو حذفها أو تقييد معالجتها وفق الأنظمة المعمول بها. لممارسة هذه الحقوق تواصل معنا على " + EMAIL + "."),
+   ("6. التواصل", "لأي استفسار عن الخصوصية راسلنا على " + EMAIL + "."),
   ]},
 },
 "en": {
@@ -177,6 +180,7 @@ T = {
    "work_eyebrow": "Previous work", "work_h": "Example: a recruitment management system",
    "work_tag": "Previous work", "work_name": "Recruitment management system",
    "work_p": "An end-to-end system for managing recruitment (istiqdam) operations, built from scratch around how recruitment companies work, and delivered for a company in the field.",
+   "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.",
    "work_feats": [("Built to order", "Shaped around the company's procedures, not the other way round."),
                   ("On the client's servers", "Can be deployed inside the company's own environment so its data stays with it."),
                   ("Client branding", "Takes the company's logo and colours so it appears under its own name.")],
@@ -201,12 +205,14 @@ T = {
   "title": "Privacy policy | Alkarar Arrow",
   "desc": "How Alkarar Arrow handles the data it receives by email and through this website.",
   "h1": "Privacy policy",
+  "effective": "Effective date: October 2026",
   "body": [
-   ("What we collect", "This website does not automatically collect data from visitors. If you contact us by email or phone, we receive your name, contact details and whatever you tell us."),
-   ("How we use it", "We use it to answer your request and provide the quotation or service you asked for. We do not sell it or share it for marketing."),
-   ("How long we keep it", "We keep correspondence for as long as needed to serve you and meet applicable regulations, then delete it."),
-   ("Your rights", "You may ask to see, correct or delete your data under the Kingdom's Personal Data Protection Law."),
-   ("Contact", "For any privacy question, write to " + EMAIL + "."),
+   ("1. Who we are", "Alkarar Arrow (Riyadh, Kingdom of Saudi Arabia) operates this website and related services. References to \"Alkarar Arrow\", \"we\" or \"our\" refer to this entity."),
+   ("2. Information we collect", "This website does not collect personal data from visitors automatically and does not use cookies. If you contact us by email or phone, we receive your name, organisation, contact details and the content of your inquiry."),
+   ("3. How we use your information", "We use the information you send to respond to your inquiry, evaluate potential engagements and keep records of institutional communications. We do not sell, rent or share your personal data with third parties for marketing purposes."),
+   ("4. Data residency", "Data received through this website is processed in accordance with the requirements of the Personal Data Protection Law (PDPL) and applicable SDAIA guidance."),
+   ("5. Your rights", "You may have the right to access, correct, delete or restrict processing of your personal data under applicable law. To exercise these rights, contact us at " + EMAIL + "."),
+   ("6. Contact", "For privacy inquiries, contact " + EMAIL + "."),
   ]},
 },
 }
@@ -387,7 +393,7 @@ def division(lang, d):
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{dv["work_eyebrow"]}</p><h2>{dv["work_h"]}</h2></div>
     <article class="work">
       <div class="info"><span class="tag">{dv["work_tag"]}</span><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p><div class="feat">{feats}</div></div>
-      <div class="shot" aria-hidden="true"><div class="mock"><div class="bar"><b></b><b></b><b></b></div><i style="width:60%"></i><i></i><i style="width:80%"></i><i style="width:45%"></i><i></i><i style="width:70%"></i></div></div>
+      <div class="shot"><figure><img src="/assets/img/work-dashboard.jpg" alt="{dv["shot1_alt"]}" width="1200" height="590" loading="lazy"><img src="/assets/img/work-workers.jpg" alt="{dv["shot2_alt"]}" width="1200" height="590" loading="lazy"><figcaption>{dv["shot_note"]}</figcaption></figure></div>
     </article>
   </div>
 </section>
@@ -426,7 +432,7 @@ def privacy(lang):
     paras = "".join(f"<h2>{a}</h2><p>{c}</p>" for a, c in p["body"])
     body = f'''<body>
 {header(lang, "privacy")}<main id="main">
-<section class="page-hero"><div class="wrap stack g20"><h1>{p["h1"]}</h1></div></section>
+<section class="page-hero"><div class="wrap stack g20"><h1>{p["h1"]}</h1><p class="muted">{p["effective"]}</p></div></section>
 <section><div class="wrap prose">{paras}</div></section>
 </main>
 {footer(lang)}<script src="/assets/js/main.js" defer></script>

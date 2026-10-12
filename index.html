@@ -39,7 +39,8 @@
 <a class="skip" href="#main">انتقل إلى المحتوى</a>
 <header class="site">
   <a class="brand" href="/" aria-label="سهم الكرار - الرئيسية"><img src="/assets/img/mark.png" alt="" width="46" height="48"><span class="brand-name">سهم الكرار</span></a>
-  <nav class="main" aria-label="التنقل الرئيسي">
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-open="القائمة" data-close="إغلاق القائمة"><span class="bars" aria-hidden="true"></span><span class="sr">القائمة</span></button>
+  <nav class="main" id="site-nav" aria-label="التنقل الرئيسي">
     <a href="/#about">عن الشركة</a>
     <a href="/food/">الأغذية</a><a href="/technology/">التقنية</a><a href="/contracting/">المقاولات</a>
     <a href="/#contact">تواصل معنا</a>
@@ -75,13 +76,27 @@
 </section>
 <section id="contact" class="alt">
   <div class="wrap cols">
-    <div class="stack g20"><p class="eyebrow">تواصل معنا</p><h2>لديك مشروع أو توريد؟ نبدأ من هنا</h2><p class="muted">اكتب لنا عن احتياجك، وسيعود إليك فريق القطاع المختص.</p></div>
-    <dl class="rows">
+    <div class="stack g28"><div class="stack g20"><p class="eyebrow">تواصل معنا</p><h2>لديك مشروع أو توريد؟ نبدأ من هنا</h2><p class="muted">اكتب لنا عن احتياجك، وسيعود إليك فريق القطاع المختص.</p></div><dl class="rows">
   <div><dt>البريد الإلكتروني</dt><dd><a href="mailto:info@alkarararrow.com"><bdi>info@alkarararrow.com</bdi></a></dd></div>
   <div><dt>الهاتف</dt><dd><a href="tel:+966504779551"><bdi>00966504779551</bdi></a></dd></div>
   <div><dt>المقر الرئيسي</dt><dd>الرياض، غرناطة، طريق الإمام عبدالله بن سعود</dd></div>
   <div><dt>السجل التجاري</dt><dd><bdi>7050745707</bdi></dd></div>
-</dl>
+</dl></div>
+    <form class="form" id="f-home" method="post" action="mailto:info@alkarararrow.com" data-endpoint="" data-subject="طلب جديد من الموقع" data-ok="وصلنا طلبك، وسيعود إليك فريق القطاع المختص." data-err="تعذر الإرسال. أرسل لنا على البريد مباشرة: info@alkarararrow.com" data-sending="جارٍ الإرسال..." data-req="هذا الحقل مطلوب" novalidate>
+  <h3>أرسل لنا طلبك</h3>
+  <div class="fields">
+    <label for="f-home-name">الاسم<input id="f-home-name" name="name" type="text" autocomplete="name" required></label>
+    <label for="f-home-org">الجهة أو الشركة<input id="f-home-org" name="organisation" type="text" autocomplete="organization"></label>
+    <label for="f-home-email">البريد الإلكتروني<input id="f-home-email" name="email" type="email" autocomplete="email" dir="ltr" required></label>
+    <label for="f-home-phone">الهاتف (اختياري)<input id="f-home-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></label>
+    <label for="f-home-div" class="full">القطاع<select id="f-home-div" name="division"><option value="food">الأغذية</option><option value="technology">التقنية</option><option value="contracting">المقاولات</option><option value="" selected>أخرى / غير محدد</option></select></label>
+    <label for="f-home-msg" class="full">تفاصيل طلبك<textarea id="f-home-msg" name="message" rows="5" placeholder="اكتب هنا ما تحتاجه: الأصناف والكميات، أو نطاق المشروع، أو الإجراء الذي تريد تبسيطه." required></textarea></label>
+  </div>
+  <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label class="consent" for="f-home-ok"><input id="f-home-ok" name="consent" type="checkbox" required><span>أوافق على استخدام بياناتي للرد على طلبي وفق <a href="/privacy/">سياسة الخصوصية</a></span></label>
+  <div class="actions"><button class="btn gold" type="submit">إرسال الطلب</button><p class="note">سيفتح الإرسال تطبيق البريد لديك برسالة جاهزة.</p></div>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>
   </div>
 </section>
 </main>

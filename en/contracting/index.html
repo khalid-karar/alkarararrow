@@ -34,12 +34,14 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://alkarararrow.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Contracting", "item": "https://alkarararrow.com/en/contracting/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What do you need for a quotation?", "acceptedAnswer": {"@type": "Answer", "text": "The scope of work, the site and the required date, plus any drawings or requirements you have."}}, {"@type": "Question", "name": "Do you provide maintenance after handover?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we offer maintenance and operating contracts that keep a facility ready for use."}}, {"@type": "Question", "name": "How do you handle safety and quality?", "acceptedAnswer": {"@type": "Answer", "text": "We follow safety and quality procedures on every site and track them during execution."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <a class="brand" href="/en/" aria-label="Alkarar Arrow - Home"><img src="/assets/img/mark.png" alt="" width="46" height="48"><span class="brand-name">Alkarar Arrow</span></a>
-  <nav class="main" aria-label="Main">
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-open="Menu" data-close="Close menu"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
+  <nav class="main" id="site-nav" aria-label="Main">
     <a href="/en/#about">About</a>
     <a href="/en/food/">Food</a><a href="/en/technology/">Technology</a><a href="/en/contracting/" aria-current="page">Contracting</a>
     <a href="/en/#contact">Contact</a>
@@ -61,10 +63,27 @@
     <div class="cards"><div class="card"><h3 style="font-size:24px">General contracting</h3><p style="margin-top:10px">Construction works for facilities and for government and private projects.</p></div><div class="card"><h3 style="font-size:24px">Project management</h3><p style="margin-top:10px">Planning and tracking execution, cost and quality through to handover.</p></div><div class="card"><h3 style="font-size:24px">Maintenance and operations</h3><p style="margin-top:10px">Maintenance and operating contracts that keep a facility ready for use.</p></div><div class="card"><h3 style="font-size:24px">Safety and quality</h3><p style="margin-top:10px">Safety and quality procedures followed on every site.</p></div></div>
   </div>
 </section>
-<section class="alt">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 48px">
-    <div class="stack g12" style="max-width:640px"><h2>Have a project to deliver?</h2><p class="muted">Send us the scope, location and required date, and we will come back with a quotation.</p></div>
-    <div class="btns"><a class="btn gold" href="mailto:info@alkarararrow.com?subject=Quotation%20request%20-%20Contracting%20division">Request a quotation</a><a class="btn" href="tel:+966504779551"><bdi>00966504779551</bdi></a></div>
+<section id="how" class="alt"><div class="wrap stack g48"><h2>How we work</h2><ol class="steps"><li><span class="n" aria-hidden="true">1</span><div><h3>Scope review</h3><p>We review the scope of work, site and requirements.</p></div></li><li><span class="n" aria-hidden="true">2</span><div><h3>Quotation and schedule</h3><p>We provide a quotation and a clear timeline.</p></div></li><li><span class="n" aria-hidden="true">3</span><div><h3>Execution</h3><p>We deliver while tracking quality, safety and cost.</p></div></li><li><span class="n" aria-hidden="true">4</span><div><h3>Handover</h3><p>We hand over the project and provide maintenance and operations when needed.</p></div></li></ol></div></section>
+<section id="faq"><div class="wrap cols"><div class="stack g12"><h2>Frequently asked questions</h2></div><div class="faq"><details><summary>What do you need for a quotation?</summary><p>The scope of work, the site and the required date, plus any drawings or requirements you have.</p></details><details><summary>Do you provide maintenance after handover?</summary><p>Yes, we offer maintenance and operating contracts that keep a facility ready for use.</p></details><details><summary>How do you handle safety and quality?</summary><p>We follow safety and quality procedures on every site and track them during execution.</p></details></div></div></section>
+<section id="request" class="alt">
+  <div class="wrap cols">
+    <div class="stack g28"><div class="stack g12"><h2>Have a project to deliver?</h2><p class="muted">Send us the scope, location and required date, and we will come back with a quotation.</p></div>
+      <div class="btns"><a class="btn" href="tel:+966504779551"><bdi>00966504779551</bdi></a><a class="btn" href="mailto:info@alkarararrow.com"><bdi>info@alkarararrow.com</bdi></a></div></div>
+    <form class="form" id="f-contracting" method="post" action="mailto:info@alkarararrow.com" data-endpoint="" data-subject="New website request" data-ok="We received your request. The team for the right division will get back to you." data-err="Could not send. Please email us directly: info@alkarararrow.com" data-sending="Sending..." data-req="This field is required" novalidate>
+  <h3>Send us your request</h3>
+  <div class="fields">
+    <label for="f-contracting-name">Name<input id="f-contracting-name" name="name" type="text" autocomplete="name" required></label>
+    <label for="f-contracting-org">Organisation<input id="f-contracting-org" name="organisation" type="text" autocomplete="organization"></label>
+    <label for="f-contracting-email">Email<input id="f-contracting-email" name="email" type="email" autocomplete="email" dir="ltr" required></label>
+    <label for="f-contracting-phone">Phone (optional)<input id="f-contracting-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></label>
+    <label for="f-contracting-div" class="full">Division<select id="f-contracting-div" name="division"><option value="food">Food</option><option value="technology">Technology</option><option value="contracting" selected>Contracting</option><option value="">Other / not sure</option></select></label>
+    <label for="f-contracting-msg" class="full">Your request<textarea id="f-contracting-msg" name="message" rows="5" placeholder="Tell us what you need: items and quantities, the project scope, or the process you want to simplify." required></textarea></label>
+  </div>
+  <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label class="consent" for="f-contracting-ok"><input id="f-contracting-ok" name="consent" type="checkbox" required><span>I agree that my data is used to answer my request, as described in the <a href="/en/privacy/">Privacy policy</a></span></label>
+  <div class="actions"><button class="btn gold" type="submit">Send request</button><p class="note">Sending opens your email app with a ready message.</p></div>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>
   </div>
 </section>
 </main>

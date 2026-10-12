@@ -11,6 +11,10 @@ EMAIL = "info@alkarararrow.com"
 PHONE_DISPLAY = "00966504779551"
 PHONE_TEL = "+966504779551"
 CR = "7050745707"
+# Contact form delivery. Leave empty to fall back to opening the visitor's email app.
+# To receive submissions in your inbox, create a free form at formspree.io (or web3forms.com)
+# and paste its endpoint here, e.g. "https://formspree.io/f/xxxxxxxx", then run build.py.
+FORM_ENDPOINT = ""
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 ICONS = {
@@ -216,6 +220,40 @@ T = {
   ]},
 },
 }
+
+FORM = {
+ "ar": {"h": "أرسل لنا طلبك", "name": "الاسم", "org": "الجهة أو الشركة", "email": "البريد الإلكتروني", "phone": "الهاتف (اختياري)",
+        "division": "القطاع", "msg": "تفاصيل طلبك", "msg_ph": "اكتب هنا ما تحتاجه: الأصناف والكميات، أو نطاق المشروع، أو الإجراء الذي تريد تبسيطه.",
+        "consent": "أوافق على استخدام بياناتي للرد على طلبي وفق", "send": "إرسال الطلب", "sending": "جارٍ الإرسال...",
+        "ok": "وصلنا طلبك، وسيعود إليك فريق القطاع المختص.", "err": "تعذر الإرسال. أرسل لنا على البريد مباشرة: " + EMAIL,
+        "mail_note": "سيفتح الإرسال تطبيق البريد لديك برسالة جاهزة.", "other": "أخرى / غير محدد", "req": "هذا الحقل مطلوب",
+        "subject": "طلب جديد من الموقع"},
+ "en": {"h": "Send us your request", "name": "Name", "org": "Organisation", "email": "Email", "phone": "Phone (optional)",
+        "division": "Division", "msg": "Your request", "msg_ph": "Tell us what you need: items and quantities, the project scope, or the process you want to simplify.",
+        "consent": "I agree that my data is used to answer my request, as described in the", "send": "Send request", "sending": "Sending...",
+        "ok": "We received your request. The team for the right division will get back to you.", "err": "Could not send. Please email us directly: " + EMAIL,
+        "mail_note": "Sending opens your email app with a ready message.", "other": "Other / not sure", "req": "This field is required",
+        "subject": "New website request"},
+}
+MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "Close menu")}
+HOW = {
+ "ar": {"h": "كيف نعمل", "food": [("الطلب", "تحدد الأصناف والكميات وموعد التوريد."), ("العرض", "نرسل لك عرضًا واضحًا بالأسعار والمواعيد."), ("التوريد", "ننفّذ التوريد وفق الاتفاق وبالجودة المطلوبة."), ("المتابعة", "نوثّق مراحل التوريد ونتابع معك بعد التسليم.")],
+        "technology": [("فهم الإجراء", "نبدأ بفهم طريقة عملك والإجراء الذي تريد تبسيطه."), ("الحل المقترح", "نقترح حلًا وخطة وتكلفة قبل أي تنفيذ."), ("البناء والاختبار", "نبني الحل ونختبره معك على بيانات حقيقية."), ("التسليم والدعم", "نسلّم الحل وندرّب فريقك ونواصل الدعم.")],
+        "contracting": [("دراسة النطاق", "نراجع نطاق العمل والموقع والمتطلبات."), ("العرض والجدول", "نقدّم عرضًا وجدولًا زمنيًا واضحًا."), ("التنفيذ", "ننفّذ ونتابع الجودة والسلامة والتكلفة."), ("التسليم", "نسلّم المشروع ونقدّم الصيانة والتشغيل عند الحاجة.")]},
+ "en": {"h": "How we work", "food": [("Request", "You tell us the items, quantities and delivery date."), ("Quotation", "We send a clear quotation with prices and dates."), ("Supply", "We deliver as agreed, to the required quality."), ("Follow-up", "We document each stage and follow up after delivery.")],
+        "technology": [("Understand the process", "We start by understanding how you work and what you want to simplify."), ("Proposed solution", "We propose a solution, plan and cost before any build."), ("Build and test", "We build it and test it with you on real data."), ("Handover and support", "We hand over, train your team and keep supporting it.")],
+        "contracting": [("Scope review", "We review the scope of work, site and requirements."), ("Quotation and schedule", "We provide a quotation and a clear timeline."), ("Execution", "We deliver while tracking quality, safety and cost."), ("Handover", "We hand over the project and provide maintenance and operations when needed.")]},
+}
+FAQ = {
+ "ar": {"h": "أسئلة شائعة",
+  "food": [("هل تخدمون الجهات الحكومية؟", "نعم، نورّد للقطاعين الحكومي والخاص."), ("ما الذي أحتاجه لطلب عرض سعر؟", "أرسل لنا الأصناف والكميات وموعد التوريد المطلوب، ونعود إليك بعرض."), ("ما أنواع اللحوم المتوفرة؟", "نورّد لحوم الضأن والماعز والأبقار والدواجن.")],
+  "technology": [("هل يمكن نشر النظام على خوادمنا؟", "نعم، يمكن نشر الأنظمة التي نبنيها داخل بيئتك لتبقى بياناتك عندك."), ("هل تبنون أنظمة من الصفر؟", "نعم، نبني الأنظمة حسب إجراءات العميل بدل تطويعه لنظام جاهز."), ("هل يظهر النظام بهوية شركتنا؟", "نعم، يقبل النظام شعار شركتك وألوانها ليظهر باسمك.")],
+  "contracting": [("ما المعلومات اللازمة لعرض السعر؟", "نطاق العمل والموقع والموعد المطلوب، وأي مخططات أو متطلبات متوفرة."), ("هل تقدمون الصيانة بعد التسليم؟", "نعم، نقدّم عقود صيانة وتشغيل تبقي المنشأة جاهزة للعمل."), ("كيف تتعاملون مع السلامة والجودة؟", "نلتزم بإجراءات السلامة والجودة في كل موقع ونتابعها خلال التنفيذ.")]},
+ "en": {"h": "Frequently asked questions",
+  "food": [("Do you serve government bodies?", "Yes, we supply both government and private sector clients."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
+  "technology": [("Can the system be deployed on our own servers?", "Yes, the systems we build can be deployed inside your environment so your data stays with you."), ("Do you build systems from scratch?", "Yes. We build around the client's procedures instead of bending the client to an off-the-shelf product."), ("Can the system carry our branding?", "Yes. It takes your company's logo and colours so it appears under your name.")],
+  "contracting": [("What do you need for a quotation?", "The scope of work, the site and the required date, plus any drawings or requirements you have."), ("Do you provide maintenance after handover?", "Yes, we offer maintenance and operating contracts that keep a facility ready for use."), ("How do you handle safety and quality?", "We follow safety and quality procedures on every site and track them during execution.")]},
+}
 DIVS = ["food", "technology", "contracting"]
 
 # ----------------------------------------------------------------- helpers
@@ -278,7 +316,8 @@ def header(lang, key):
     return f'''<a class="skip" href="#main">{t["skip"]}</a>
 <header class="site">
   <a class="brand" href="{b}" aria-label="{esc(t["brand"])} - {t["home_label"]}">{logo}<span class="brand-name">{esc(t["brand"])}</span></a>
-  <nav class="main" aria-label="{'التنقل الرئيسي' if lang == 'ar' else 'Main'}">
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-open="{MENU[lang][0]}" data-close="{MENU[lang][1]}"><span class="bars" aria-hidden="true"></span><span class="sr">{MENU[lang][0]}</span></button>
+  <nav class="main" id="site-nav" aria-label="{'التنقل الرئيسي' if lang == 'ar' else 'Main'}">
     <a href="{b}#about">{t["nav"]["about"]}</a>
     {div_links}
     <a href="{b}#contact">{t["nav"]["contact"]}</a>
@@ -335,6 +374,42 @@ def write(rel, content):
     open(p, "w", encoding="utf-8").write(content)
 
 # ----------------------------------------------------------------- pages
+def form_html(lang, d=None):
+    f = FORM[lang]; t = T[lang]
+    opts = "".join(f'<option value="{k}"{" selected" if k == d else ""}>{t["div_names"][k]}</option>' for k in DIVS)
+    opts += f'<option value=""{"" if d else " selected"}>{f["other"]}</option>' if not d else f'<option value="">{f["other"]}</option>'
+    uid = "f-" + (d or "home")
+    action = FORM_ENDPOINT or f"mailto:{EMAIL}"
+    return f'''<form class="form" id="{uid}" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-subject="{esc(f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
+  <h3>{f["h"]}</h3>
+  <div class="fields">
+    <label for="{uid}-name">{f["name"]}<input id="{uid}-name" name="name" type="text" autocomplete="name" required></label>
+    <label for="{uid}-org">{f["org"]}<input id="{uid}-org" name="organisation" type="text" autocomplete="organization"></label>
+    <label for="{uid}-email">{f["email"]}<input id="{uid}-email" name="email" type="email" autocomplete="email" dir="ltr" required></label>
+    <label for="{uid}-phone">{f["phone"]}<input id="{uid}-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></label>
+    <label for="{uid}-div" class="full">{f["division"]}<select id="{uid}-div" name="division">{opts}</select></label>
+    <label for="{uid}-msg" class="full">{f["msg"]}<textarea id="{uid}-msg" name="message" rows="5" placeholder="{esc(f["msg_ph"])}" required></textarea></label>
+  </div>
+  <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label class="consent" for="{uid}-ok"><input id="{uid}-ok" name="consent" type="checkbox" required><span>{f["consent"]} <a href="{path_for(lang, "privacy")}">{t["labels"]["privacy"]}</a></span></label>
+  <div class="actions"><button class="btn gold" type="submit">{f["send"]}</button>{'' if FORM_ENDPOINT else '<p class="note">' + f["mail_note"] + '</p>'}</div>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>'''
+
+def how_html(lang, d):
+    steps = "".join(f'<li><span class="n" aria-hidden="true">{i + 1}</span><div><h3>{esc(a)}</h3><p>{esc(c)}</p></div></li>' for i, (a, c) in enumerate(HOW[lang][d]))
+    return f'''<section id="how" class="alt"><div class="wrap stack g48"><h2>{HOW[lang]["h"]}</h2><ol class="steps">{steps}</ol></div></section>
+'''
+
+def faq_html(lang, d):
+    items = "".join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in FAQ[lang][d])
+    return f'''<section id="faq"><div class="wrap cols"><div class="stack g12"><h2>{FAQ[lang]["h"]}</h2></div><div class="faq">{items}</div></div></section>
+'''
+
+def faq_ld(lang, d):
+    return {"@context": "https://schema.org", "@type": "FAQPage",
+            "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ[lang][d]]}
+
 def home(lang):
     t = T[lang]; h = t["home"]; b = t["base"]
     cards = ""
@@ -372,8 +447,8 @@ def home(lang):
 </section>
 <section id="contact" class="alt">
   <div class="wrap cols">
-    <div class="stack g20"><p class="eyebrow">{h["contact_eyebrow"]}</p><h2>{h["contact_h"]}</h2><p class="muted">{h["contact_p"]}</p></div>
-    {contact_rows(lang)}
+    <div class="stack g28"><div class="stack g20"><p class="eyebrow">{h["contact_eyebrow"]}</p><h2>{h["contact_h"]}</h2><p class="muted">{h["contact_p"]}</p></div>{contact_rows(lang)}</div>
+    {form_html(lang)}
   </div>
 </section>
 </main>
@@ -388,7 +463,7 @@ def division(lang, d):
     work = ""
     if d == "technology":
         feats = "".join(f"<div><strong>{esc(a)}</strong><span>{esc(c)}</span></div>" for a, c in dv["work_feats"])
-        work = f'''<section class="alt" id="work">
+        work = f'''<section id="work">
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{dv["work_eyebrow"]}</p><h2>{dv["work_h"]}</h2></div>
     <article class="work">
@@ -415,17 +490,18 @@ def division(lang, d):
     <div class="cards">{cards}</div>
   </div>
 </section>
-{work}<section class="{'' if d == 'technology' else 'alt'}">
-  <div class="wrap" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px 48px">
-    <div class="stack g12" style="max-width:640px"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
-    <div class="btns"><a class="btn gold" href="{mail}">{dv["cta_btn"]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a></div>
+{work}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
+  <div class="wrap cols">
+    <div class="stack g28"><div class="stack g12"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
+      <div class="btns"><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>
+    {form_html(lang, d)}
   </div>
 </section>
 </main>
 {footer(lang)}<script src="/assets/js/main.js" defer></script>
 </body></html>
 '''
-    return head(lang, d, dv["title"], dv["desc"], [crumb_ld(lang, d)]) + body
+    return head(lang, d, dv["title"], dv["desc"], [crumb_ld(lang, d), faq_ld(lang, d)]) + body
 
 def privacy(lang):
     t = T[lang]; p = t["privacy"]; b = t["base"]
@@ -484,7 +560,7 @@ if __name__ == "__main__":
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; base-uri 'self'; form-action 'self' mailto: https://formspree.io https://api.web3forms.com; connect-src 'self' https://formspree.io https://api.web3forms.com; frame-ancestors 'none'; object-src 'none'
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 """)

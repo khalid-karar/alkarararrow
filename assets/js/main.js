@@ -62,7 +62,7 @@
       var data = new FormData(form), endpoint = form.dataset.endpoint;
       if (endpoint && form.dataset.key) { data.append('access_key', form.dataset.key); data.append('subject', form.dataset.subject); data.append('from_name', 'Alkarar Arrow website'); }
       if (!endpoint) {
-        var lines = []; ['name', 'organisation', 'email', 'phone', 'division'].forEach(function (k) { if (data.get(k)) lines.push(k + ': ' + data.get(k)); });
+        var lines = []; ['name', 'organization', 'email', 'phone', 'division'].forEach(function (k) { if (data.get(k)) lines.push(k + ': ' + data.get(k)); });
         var body = lines.join('\n') + '\n\n' + data.get('message');
         location.href = 'mailto:' + form.getAttribute('action').replace('mailto:', '') + '?subject=' + encodeURIComponent(form.dataset.subject) + '&body=' + encodeURIComponent(body);
         return;

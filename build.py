@@ -172,18 +172,18 @@ T = {
                 ("Sugar and staples", "Supply of sugar and basic food goods in quantities that fit the client's need."),
                 ("Supply to institutions", "Regular supply contracts for government bodies and companies, with clear delivery dates."),
                 ("Quality and compliance", "We work to the requirements of the Kingdom's regulators and document each stage of supply.")],
-   "cta_h": "Need food supply for your organisation?", "cta_p": "Send us the items, quantities and date, and we will come back with a quotation.", "cta_btn": "Request a quotation",
+   "cta_h": "Need food supply for your organization?", "cta_p": "Send us the items, quantities and date, and we will come back with a quotation.", "cta_btn": "Request a quotation",
    "subject": "Quotation request - Food division"},
   "technology": {
    "title": "Technology | Alkarar Arrow",
    "desc": "Alkarar Arrow's technology division: AI and business automation, IT and networking, cybersecurity and technology consulting, with a recruitment management system as previous work.",
-   "short": "AI, IT and networking solutions, with technology consulting for organisations and companies.",
+   "short": "AI, IT and networking solutions, with technology consulting for organizations and companies.",
    "bullets": ["AI and business automation", "IT and networking", "Technology consulting"],
    "h1": "Technology",
    "lead": "We build technology that serves the work directly: AI and automation, infrastructure and networks, and custom systems designed around how the client operates.",
    "services_h": "What we offer",
    "services": [("AI and business automation", "Automating repetitive processes and building smart tools that save time and reduce errors."),
-                ("IT and networking", "Network design, operation and support sized to the organisation."),
+                ("IT and networking", "Network design, operation and support sized to the organization."),
                 ("Cybersecurity", "Penetration testing, vulnerability assessment and security monitoring and operations."),
                 ("Custom systems", "Systems built from scratch around the client's procedures, instead of bending the client to an off-the-shelf product."),
                 ("Technology consulting", "Assessing the current state, setting priorities and a clear roadmap to execute.")],
@@ -193,9 +193,9 @@ T = {
    "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.", "shot1_cap": "Tracking dashboard", "shot2_cap": "Workers management", "open_full": "open full size",
    "work_feats": [("Built to order", "Shaped around the company's procedures, not the other way round."),
                   ("On the client's servers", "Can be deployed inside the company's own environment so its data stays with it."),
-                  ("Client branding", "Takes the company's logo and colours so it appears under its own name.")],
+                  ("Client branding", "Takes the company's logo and colors so it appears under its own name.")],
    "cta_h": "Have an idea or a system you need built?", "cta_p": "Tell us which process you want to simplify and we will propose the solution.", "cta_btn": "Discuss your project",
-   "subject": "Enquiry - Technology division"},
+   "subject": "Inquiry - Technology division"},
   "contracting": {
    "title": "Contracting | Alkarar Arrow",
    "desc": "Alkarar Arrow's contracting division: general contracting, project management and execution, and maintenance and operations to clear quality and safety standards in Saudi Arabia.",
@@ -218,7 +218,7 @@ T = {
   "effective": "Effective date: October 2026",
   "body": [
    ("1. Who we are", "Alkarar Arrow (Riyadh, Kingdom of Saudi Arabia) operates this website and related services. References to \"Alkarar Arrow\", \"we\" or \"our\" refer to this entity."),
-   ("2. Information we collect", "This website does not collect personal data from visitors automatically and does not use cookies. If you contact us by email or phone, we receive your name, organisation, contact details and the content of your inquiry."),
+   ("2. Information we collect", "This website does not collect personal data from visitors automatically and does not use cookies. If you contact us by email or phone, we receive your name, organization, contact details and the content of your inquiry."),
    ("3. How we use your information", "We use the information you send to respond to your inquiry, evaluate potential engagements and keep records of institutional communications. We do not sell, rent or share your personal data with third parties for marketing purposes."),
    ("4. Data residency", "Data received through this website is processed in accordance with the requirements of the Personal Data Protection Law (PDPL) and applicable SDAIA guidance."),
    ("5. Your rights", "You may have the right to access, correct, delete or restrict processing of your personal data under applicable law. To exercise these rights, contact us at " + EMAIL + "."),
@@ -234,7 +234,7 @@ FORM = {
         "ok": "وصلنا طلبك، وسيعود إليك فريق القطاع المختص.", "err": "تعذر الإرسال. أرسل لنا على البريد مباشرة: " + EMAIL,
         "mail_note": "سيفتح الإرسال تطبيق البريد لديك برسالة جاهزة.", "other": "أخرى / غير محدد", "req": "هذا الحقل مطلوب",
         "subject": "طلب جديد من الموقع"},
- "en": {"h": "Send us your request", "name": "Name", "org": "Organisation", "email": "Email", "phone": "Phone (optional)",
+ "en": {"h": "Send us your request", "name": "Name", "org": "Organization", "email": "Email", "phone": "Phone (optional)",
         "division": "Division", "msg": "Your request", "msg_ph": "Tell us what you need: items and quantities, the project scope, or the process you want to simplify.",
         "consent": "I agree that my data is used to answer my request, as described in the", "send": "Send request", "sending": "Sending...",
         "ok": "We received your request. The team for the right division will get back to you.", "err": "Could not send. Please email us directly: " + EMAIL,
@@ -258,7 +258,7 @@ FAQ = {
   "contracting": [("ما المعلومات اللازمة لعرض السعر؟", "نطاق العمل والموقع والموعد المطلوب، وأي مخططات أو متطلبات متوفرة."), ("هل تقدمون الصيانة بعد التسليم؟", "نعم، نقدّم عقود صيانة وتشغيل تبقي المنشأة جاهزة للعمل."), ("كيف تتعاملون مع السلامة والجودة؟", "نلتزم بإجراءات السلامة والجودة في كل موقع ونتابعها خلال التنفيذ.")]},
  "en": {"h": "Frequently asked questions",
   "food": [("Do you serve government bodies?", "Yes, we supply both government and private sector clients."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
-  "technology": [("Can the system be deployed on our own servers?", "Yes, the systems we build can be deployed inside your environment so your data stays with you."), ("Do you build systems from scratch?", "Yes. We build around the client's procedures instead of bending the client to an off-the-shelf product."), ("Can the system carry our branding?", "Yes. It takes your company's logo and colours so it appears under your name.")],
+  "technology": [("Can the system be deployed on our own servers?", "Yes, the systems we build can be deployed inside your environment so your data stays with you."), ("Do you build systems from scratch?", "Yes. We build around the client's procedures instead of bending the client to an off-the-shelf product."), ("Can the system carry our branding?", "Yes. It takes your company's logo and colors so it appears under your name.")],
   "contracting": [("What do you need for a quotation?", "The scope of work, the site and the required date, plus any drawings or requirements you have."), ("Do you provide maintenance after handover?", "Yes, we offer maintenance and operating contracts that keep a facility ready for use."), ("How do you handle safety and quality?", "We follow safety and quality procedures on every site and track them during execution.")]},
 }
 DIVS = ["food", "technology", "contracting"]
@@ -391,7 +391,7 @@ def form_html(lang, d=None):
   <h3>{f["h"]}</h3>
   <div class="fields">
     <label for="{uid}-name">{f["name"]}<input id="{uid}-name" name="name" type="text" autocomplete="name" required></label>
-    <label for="{uid}-org">{f["org"]}<input id="{uid}-org" name="organisation" type="text" autocomplete="organization"></label>
+    <label for="{uid}-org">{f["org"]}<input id="{uid}-org" name="organization" type="text" autocomplete="organization"></label>
     <label for="{uid}-email">{f["email"]}<input id="{uid}-email" name="email" type="email" autocomplete="email" dir="ltr" required></label>
     <label for="{uid}-phone">{f["phone"]}<input id="{uid}-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></label>
     <label for="{uid}-div" class="full">{f["division"]}<select id="{uid}-div" name="division">{opts}</select></label>

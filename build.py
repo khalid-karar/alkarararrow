@@ -508,11 +508,13 @@ def division(lang, d):
     body = f'''<body>
 {header(lang, d)}<main id="main">
 <section class="page-hero">
-  <div class="wrap stack g28">
+  <div class="wrap cols" style="align-items:center">
+    <div class="stack g28">
     <nav class="crumbs" aria-label="{'مسار التصفح' if lang == 'ar' else 'Breadcrumb'}"><a href="{b}">{t["home_label"]}</a><span aria-hidden="true">/</span><a href="{b}#divisions">{t["nav"]["divisions"]}</a><span aria-hidden="true">/</span><span aria-current="page">{t["div_names"][d]}</span></nav>
-    {ICONS[d]}
     <h1>{dv["h1"]}</h1>
     <p class="lead">{dv["lead"]}</p>
+    </div>
+    <div class="div-logo"><img src="/assets/img/div-{d}-{lang}.webp" alt="{'سهم الكرار - ' if lang == 'ar' else 'Alkarar Arrow - '}{t["div_names"][d]}" width="640" height="640" fetchpriority="high"></div>
   </div>
 </section>
 <section>

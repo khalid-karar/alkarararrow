@@ -75,3 +75,21 @@
     });
   });
 })();
+
+// Screenshot pop-up: open in an in-page dialog (X, Esc or click outside to close). Without JS the links open the image.
+(function () {
+  var dlg = document.getElementById('lightbox');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  var img = dlg.querySelector('img');
+  document.querySelectorAll('a.win[data-full]').forEach(function (a) {
+    a.removeAttribute('target');
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var thumb = a.querySelector('img');
+      img.src = a.dataset.full; img.alt = thumb ? thumb.alt : '';
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('.lb-x').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();

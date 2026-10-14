@@ -241,6 +241,7 @@ FORM = {
         "mail_note": "Sending opens your email app with a ready message.", "other": "Other / not sure", "req": "This field is required",
         "subject": "New website request"},
 }
+LB = {"ar": "إغلاق", "en": "Close"}
 MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "Close menu")}
 HOW = {
  "ar": {"h": "كيف نعمل", "food": [("الطلب", "تحدد الأصناف والكميات وموعد التوريد."), ("العرض", "نرسل لك عرضًا واضحًا بالأسعار والمواعيد."), ("التوريد", "ننفّذ التوريد وفق الاتفاق وبالجودة المطلوبة."), ("المتابعة", "نوثّق مراحل التوريد ونتابع معك بعد التسليم.")],
@@ -476,12 +477,13 @@ def division(lang, d):
       <div class="info"><div class="head"><span class="tag">{dv["work_tag"]}</span><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p></div><div class="feat">{feats}</div></div>
       <div class="shot">
         <ul class="shots">
-          <li><figure><a class="win" href="/assets/img/work-dashboard.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot1_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-dashboard.jpg" alt="{esc(dv["shot1_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot1_cap"]}</figcaption></figure></li>
-          <li><figure><a class="win" href="/assets/img/work-workers.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot2_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-workers.jpg" alt="{esc(dv["shot2_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot2_cap"]}</figcaption></figure></li>
+          <li><figure><a class="win" href="/assets/img/work-dashboard.jpg" data-full="/assets/img/work-dashboard.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot1_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-dashboard.jpg" alt="{esc(dv["shot1_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot1_cap"]}</figcaption></figure></li>
+          <li><figure><a class="win" href="/assets/img/work-workers.jpg" data-full="/assets/img/work-workers.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot2_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-workers.jpg" alt="{esc(dv["shot2_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot2_cap"]}</figcaption></figure></li>
         </ul>
         <p class="shot-note">{dv["shot_note"]}</p>
       </div>
     </article>
+    <dialog class="lb" id="lightbox" aria-label="{LB[lang]}"><button class="lb-x" type="button" aria-label="{LB[lang]}"><span aria-hidden="true">&times;</span></button><img src="" alt="" width="1200" height="590"></dialog>
   </div>
 </section>
 '''

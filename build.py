@@ -90,13 +90,16 @@ T = {
                 ("الأمن السيبراني", "فحص الاختراق وتقييم الثغرات وخدمات المراقبة والتشغيل الأمني."),
                 ("الأنظمة المخصصة", "تطوير أنظمة من الصفر حسب إجراءات العميل، بدل تطويع العميل لنظام جاهز."),
                 ("الاستشارات التقنية", "تقييم الوضع الحالي وتحديد الأولويات وخارطة طريق واضحة للتنفيذ.")],
-   "work_eyebrow": "من أعمالنا السابقة", "work_h": "مثال: نظام إدارة الاستقدام",
-   "work_tag": "مشروع سابق", "work_name": "نظام إدارة الاستقدام",
-   "work_p": "نظام متكامل لإدارة عمليات الاستقدام، بُني من الصفر ليناسب طبيعة عمل شركات الاستقدام، ونُفّذ لإحدى الشركات العاملة في هذا المجال.",
+   "work_eyebrow": "منتجاتنا", "work_h": "استقدام360: نظام إدارة الاستقدام",
+   "work_tag": "منتج من سهم الكرار", "work_name": "استقدام360",
+   "work_p": "نظام متكامل لإدارة عمليات الاستقدام، بُني من الصفر ليناسب طبيعة عمل شركات الاستقدام. يتابع العامل من توقيع العقد حتى الوصول، ويُبقي العميل على اطلاع بكل خطوة.",
+   "prod_visit": "زيارة موقع استقدام360", "prod_url": "https://istiqdam360.netlify.app/", "prod_alt": "شعار استقدام360",
    "shot1_alt": "لوحة متابعة نظام إدارة الاستقدام تعرض مؤشرات العقود والعمالة", "shot2_alt": "شاشة إدارة العمالة في نظام الاستقدام مع الفلاتر والبحث", "shot_note": "لقطات من النظام، مع إخفاء البيانات الحقيقية.", "shot1_cap": "لوحة المتابعة", "shot2_cap": "إدارة العمالة", "open_full": "افتح الصورة كاملة",
-   "work_feats": [("مصمم حسب الطلب", "يُبنى على إجراءات الشركة، لا العكس."),
-                  ("على خوادم العميل", "يمكن نشره داخل بيئة الشركة لتبقى بياناتها عندها."),
-                  ("هوية العميل", "يقبل شعار الشركة وألوانها ليظهر باسمها.")],
+   "work_feats": [("متابعة كاملة للعمالة", "من توقيع العقد حتى وصول العامل."),
+                  ("تنبيهات تلقائية للعملاء", "رسائل نصية تصل العميل عند كل مرحلة."),
+                  ("تطبيق للعميل", "يتابع العميل طلبه من جواله."),
+                  ("بياناتك عندك", "يعمل على خادمك أو على خوادمنا."),
+                  ("هوية شركتك", "مستندات وواجهات بشعار الشركة وألوانها.")],
    "cta_h": "عندك فكرة أو نظام تحتاج بناءه؟", "cta_p": "أخبرنا عن الإجراء الذي تريد تبسيطه، ونقترح عليك الحل.", "cta_btn": "ناقش مشروعك",
    "subject": "استفسار - قطاع التقنية"},
   "contracting": {
@@ -187,13 +190,16 @@ T = {
                 ("Cybersecurity", "Penetration testing, vulnerability assessment and security monitoring and operations."),
                 ("Custom systems", "Systems built from scratch around the client's procedures, instead of bending the client to an off-the-shelf product."),
                 ("Technology consulting", "Assessing the current state, setting priorities and a clear roadmap to execute.")],
-   "work_eyebrow": "Previous work", "work_h": "Example: a recruitment management system",
-   "work_tag": "Previous work", "work_name": "Recruitment management system",
-   "work_p": "An end-to-end system for managing recruitment (istiqdam) operations, built from scratch around how recruitment companies work, and delivered for a company in the field.",
+   "work_eyebrow": "Our products", "work_h": "Istiqdam360: recruitment management system",
+   "work_tag": "A product by Alkarar Arrow", "work_name": "Istiqdam360",
+   "work_p": "An end-to-end system for managing recruitment operations, built from scratch around how recruitment companies work. It tracks each worker from contract signing to arrival and keeps the client informed at every step.",
+   "prod_visit": "Visit the Istiqdam360 site", "prod_url": "https://istiqdam360.netlify.app/en/", "prod_alt": "Istiqdam360 logo",
    "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.", "shot1_cap": "Tracking dashboard", "shot2_cap": "Workers management", "open_full": "open full size",
-   "work_feats": [("Built to order", "Shaped around the company's procedures, not the other way round."),
-                  ("On the client's servers", "Can be deployed inside the company's own environment so its data stays with it."),
-                  ("Client branding", "Takes the company's logo and colors so it appears under its own name.")],
+   "work_feats": [("Full worker tracking", "From contract signing to the worker's arrival."),
+                  ("Automatic client alerts", "Text messages reach the client at every stage."),
+                  ("Client mobile app", "Clients follow their order from their phone."),
+                  ("Your data stays yours", "Runs on your own server or on ours."),
+                  ("Your company's identity", "Documents and screens carry your logo and colors.")],
    "cta_h": "Have an idea or a system you need built?", "cta_p": "Tell us which process you want to simplify and we will propose the solution.", "cta_btn": "Discuss your project",
    "subject": "Inquiry - Technology division"},
   "contracting": {
@@ -241,6 +247,10 @@ FORM = {
         "mail_note": "Sending opens your email app with a ready message.", "other": "Other / not sure", "req": "This field is required",
         "subject": "New website request"},
 }
+PRODUCT_URL = {"ar": "https://istiqdam360.netlify.app/", "en": "https://istiqdam360.netlify.app/en/"}
+PRODUCT_NAME = {"ar": "منتجنا: استقدام360", "en": "Our product: Istiqdam360"}
+PRODUCT_BLURB = {"ar": "من تقنية سهم الكرار: نظام يدير الاستقدام من العقد حتى وصول العامل.", "en": "From Alkarar Arrow Technology: a system that runs recruitment from contract to arrival."}
+PRODUCT_BTN = {"ar": "تعرّف على استقدام360", "en": "Explore Istiqdam360"}
 LB = {"ar": "إغلاق", "en": "Close"}
 MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "Close menu")}
 HOW = {
@@ -347,6 +357,7 @@ def footer(lang):
       <li>{L["hq_val"]}</li></ul></div>
     <div><h2>{L["company_h"]}</h2><ul>
       <li>{L["cr"]}: <bdi>{CR}</bdi></li>
+      <li><a href="{PRODUCT_URL[lang]}" target="_blank" rel="noopener">{PRODUCT_NAME[lang]}</a></li>
       <li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
     <p class="fine">© 2026 {esc(t["brand"])}. {L["rights"]}.</p>
   </div>
@@ -452,6 +463,11 @@ def home(lang):
     <div class="cards">{cards}</div>
   </div>
 </section>
+<section id="product">
+  <div class="wrap">
+    <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1400" height="440" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
+  </div>
+</section>
 <section id="contact" class="alt">
   <div class="wrap cols">
     <div class="stack g28"><div class="stack g20"><p class="eyebrow">{h["contact_eyebrow"]}</p><h2>{h["contact_h"]}</h2><p class="muted">{h["contact_p"]}</p></div>{contact_rows(lang)}</div>
@@ -474,7 +490,8 @@ def division(lang, d):
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{dv["work_eyebrow"]}</p><h2>{dv["work_h"]}</h2></div>
     <article class="work">
-      <div class="info"><div class="head"><span class="tag">{dv["work_tag"]}</span><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p></div><div class="feat">{feats}</div></div>
+      <div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{esc(dv["prod_alt"])}" width="1400" height="440" loading="lazy"><div class="prod-side"><span class="tag">{dv["work_tag"]}</span><a class="btn gold" href="{dv["prod_url"]}" target="_blank" rel="noopener">{dv["prod_visit"]}</a></div></div>
+      <div class="info"><div class="head"><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p></div><div class="feat">{feats}</div></div>
       <div class="shot">
         <ul class="shots">
           <li><figure><a class="win" href="/assets/img/work-dashboard.jpg" data-full="/assets/img/work-dashboard.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot1_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-dashboard.jpg" alt="{esc(dv["shot1_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot1_cap"]}</figcaption></figure></li>

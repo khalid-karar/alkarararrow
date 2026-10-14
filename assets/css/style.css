@@ -261,3 +261,11 @@ html[dir="rtl"] .form select{background-position:left 16px center}
 .lb-x:hover{background:var(--gold);color:var(--ink)}
 @media (max-width:560px){.lb-x{top:-14px;inset-inline-end:-6px}}
 html:has(dialog[open]){overflow:hidden}
+
+/* Istiqdam360 product banner */
+.prod{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;background:#1b2a4a;padding:clamp(20px,3vw,36px);border-bottom:1px solid var(--line-2)}
+.prod img{width:min(100%,420px);height:auto;display:block}
+.prod-side{display:flex;flex-direction:column;align-items:flex-start;gap:16px;max-width:360px}
+.prod-side p{margin:0;color:#e9edf5;font-size:18px;line-height:1.7}
+.prod-side .tag{border-color:#b8963e;color:#e8cf8a}
+#product .work .prod{border-bottom:0}

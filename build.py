@@ -12,13 +12,15 @@ CSS="/assets/css/style.css?v="+_v("assets/css/style.css")
 JS="/assets/js/main.js?v="+_v("assets/js/main.js")
 SITE = "https://alkarararrow.com"
 EMAIL = "info@alkarararrow.com"
-PHONE_DISPLAY = "00966504779551"
+PHONE_DISPLAY = "+966 50 477 9551"
 PHONE_TEL = "+966504779551"
 CR = "7050745707"
-# Contact form delivery. Leave empty to fall back to opening the visitor's email app.
-# To receive submissions in your inbox, create a free form at formspree.io (or web3forms.com)
-# and paste its endpoint here, e.g. "https://formspree.io/f/xxxxxxxx", then run build.py.
+# Contact form delivery. Leave FORM_ENDPOINT empty to fall back to opening the visitor's email app.
+# Formspree:  FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx"   (FORM_ACCESS_KEY stays empty)
+# Web3Forms:  FORM_ENDPOINT = "https://api.web3forms.com/submit"  and  FORM_ACCESS_KEY = "<your access key>"
+# Then run build.py and commit. The Content-Security-Policy in _headers already allows both services.
 FORM_ENDPOINT = ""
+FORM_ACCESS_KEY = ""
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 ICONS = {
@@ -31,7 +33,7 @@ ICONS = {
 T = {
 "ar": {
  "dir": "rtl", "lang": "ar", "base": "/", "other": "en", "other_label": "English", "other_short": "EN",
- "fonts": "https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap",
+ "fonts": "https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap",
  "brand": "سهم الكرار", "locale": "ar_SA", "other_locale": "en_US",
  "skip": "انتقل إلى المحتوى",
  "nav": {"about": "عن الشركة", "divisions": "قطاعاتنا", "contact": "تواصل معنا"},
@@ -91,7 +93,7 @@ T = {
    "work_eyebrow": "من أعمالنا السابقة", "work_h": "مثال: نظام إدارة الاستقدام",
    "work_tag": "مشروع سابق", "work_name": "نظام إدارة الاستقدام",
    "work_p": "نظام متكامل لإدارة عمليات الاستقدام، بُني من الصفر ليناسب طبيعة عمل شركات الاستقدام، ونُفّذ لإحدى الشركات العاملة في هذا المجال.",
-   "shot1_alt": "لوحة متابعة نظام إدارة الاستقدام تعرض مؤشرات العقود والعمالة", "shot2_alt": "شاشة إدارة العمالة في نظام الاستقدام مع الفلاتر والبحث", "shot_note": "لقطات من النظام، مع إخفاء البيانات الحقيقية.",
+   "shot1_alt": "لوحة متابعة نظام إدارة الاستقدام تعرض مؤشرات العقود والعمالة", "shot2_alt": "شاشة إدارة العمالة في نظام الاستقدام مع الفلاتر والبحث", "shot_note": "لقطات من النظام، مع إخفاء البيانات الحقيقية.", "shot1_cap": "لوحة المتابعة", "shot2_cap": "إدارة العمالة", "open_full": "افتح الصورة كاملة",
    "work_feats": [("مصمم حسب الطلب", "يُبنى على إجراءات الشركة، لا العكس."),
                   ("على خوادم العميل", "يمكن نشره داخل بيئة الشركة لتبقى بياناتها عندها."),
                   ("هوية العميل", "يقبل شعار الشركة وألوانها ليظهر باسمها.")],
@@ -188,7 +190,7 @@ T = {
    "work_eyebrow": "Previous work", "work_h": "Example: a recruitment management system",
    "work_tag": "Previous work", "work_name": "Recruitment management system",
    "work_p": "An end-to-end system for managing recruitment (istiqdam) operations, built from scratch around how recruitment companies work, and delivered for a company in the field.",
-   "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.",
+   "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.", "shot1_cap": "Tracking dashboard", "shot2_cap": "Workers management", "open_full": "open full size",
    "work_feats": [("Built to order", "Shaped around the company's procedures, not the other way round."),
                   ("On the client's servers", "Can be deployed inside the company's own environment so its data stays with it."),
                   ("Client branding", "Takes the company's logo and colours so it appears under its own name.")],
@@ -384,7 +386,7 @@ def form_html(lang, d=None):
     opts += f'<option value=""{"" if d else " selected"}>{f["other"]}</option>' if not d else f'<option value="">{f["other"]}</option>'
     uid = "f-" + (d or "home")
     action = FORM_ENDPOINT or f"mailto:{EMAIL}"
-    return f'''<form class="form" id="{uid}" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-subject="{esc(f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
+    return f'''<form class="form" id="{uid}" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-key="{FORM_ACCESS_KEY}" data-subject="{esc(f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
   <h3>{f["h"]}</h3>
   <div class="fields">
     <label for="{uid}-name">{f["name"]}<input id="{uid}-name" name="name" type="text" autocomplete="name" required></label>
@@ -471,8 +473,14 @@ def division(lang, d):
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{dv["work_eyebrow"]}</p><h2>{dv["work_h"]}</h2></div>
     <article class="work">
-      <div class="info"><span class="tag">{dv["work_tag"]}</span><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p><div class="feat">{feats}</div></div>
-      <div class="shot"><figure><img src="/assets/img/work-dashboard.jpg" alt="{dv["shot1_alt"]}" width="1200" height="590" loading="lazy"><img src="/assets/img/work-workers.jpg" alt="{dv["shot2_alt"]}" width="1200" height="590" loading="lazy"><figcaption>{dv["shot_note"]}</figcaption></figure></div>
+      <div class="info"><div class="head"><span class="tag">{dv["work_tag"]}</span><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p></div><div class="feat">{feats}</div></div>
+      <div class="shot">
+        <ul class="shots">
+          <li><figure><a class="win" href="/assets/img/work-dashboard.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot1_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-dashboard.jpg" alt="{esc(dv["shot1_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot1_cap"]}</figcaption></figure></li>
+          <li><figure><a class="win" href="/assets/img/work-workers.jpg" target="_blank" rel="noopener" aria-label="{esc(dv["shot2_alt"])} ({dv["open_full"]})"><span class="bar" aria-hidden="true"><b></b><b></b><b></b></span><img src="/assets/img/work-workers.jpg" alt="{esc(dv["shot2_alt"])}" width="1200" height="590" loading="lazy"></a><figcaption>{dv["shot2_cap"]}</figcaption></figure></li>
+        </ul>
+        <p class="shot-note">{dv["shot_note"]}</p>
+      </div>
     </article>
   </div>
 </section>
@@ -521,7 +529,7 @@ def privacy(lang):
     return head(lang, "privacy", p["title"], p["desc"], [crumb_ld(lang, "privacy")]) + body
 
 def notfound():
-    return '''<!doctype html>
+    return f'''<!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>الصفحة غير موجودة | Page not found</title><meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">

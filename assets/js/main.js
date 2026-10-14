@@ -7,19 +7,24 @@
   function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 8); }
   onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Scroll reveal: elements fade up once as they enter the viewport.
+  // Scroll reveal: elements fade up once as they approach the viewport.
+  // Anything already above the viewport (anchor jump, reload mid-page, fast scroll) is shown at once.
   if (reduce || !('IntersectionObserver' in window)) { root.classList.remove('js'); return; }
   var sel = '.hero .wrap > div > *, .hero-art, .page-hero .wrap > *, section .wrap > .stack, section .wrap > h2,' +
             ' .card, .principle, .rows > div, .work, .cta .wrap > *, section .wrap > .btns, .prose > *';
   var els = d.querySelectorAll(sel);
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    entries.forEach(function (e) {
+      if (e.isIntersecting || e.boundingClientRect.bottom < 0) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.01, rootMargin: '0px 0px 12% 0px' });
   els.forEach(function (el) {
     var i = Array.prototype.indexOf.call(el.parentNode.children, el);
-    el.style.setProperty('--d', Math.min(i, 5) * 90 + 'ms');
+    el.style.setProperty('--d', Math.min(i, 3) * 70 + 'ms');
     el.classList.add('rv'); io.observe(el);
   });
+  // Safety net: never leave content hidden if the observer is slow or stalls.
+  setTimeout(function () { els.forEach(function (el) { el.classList.add('in'); }); }, 6000);
 })();
 
 // Mobile menu
@@ -55,6 +60,7 @@
       if (form.querySelector('[name="_gotcha"]').value) return; // bot
       if (!valid()) return;
       var data = new FormData(form), endpoint = form.dataset.endpoint;
+      if (endpoint && form.dataset.key) { data.append('access_key', form.dataset.key); data.append('subject', form.dataset.subject); data.append('from_name', 'Alkarar Arrow website'); }
       if (!endpoint) {
         var lines = []; ['name', 'organisation', 'email', 'phone', 'division'].forEach(function (k) { if (data.get(k)) lines.push(k + ': ' + data.get(k)); });
         var body = lines.join('\n') + '\n\n' + data.get('message');

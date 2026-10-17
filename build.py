@@ -12,8 +12,8 @@ CSS="/assets/css/style.css?v="+_v("assets/css/style.css")
 JS="/assets/js/main.js?v="+_v("assets/js/main.js")
 SITE = "https://alkarararrow.com"
 EMAIL = "info@alkarararrow.com"
-PHONE_DISPLAY = "+966 50 477 9551"
-PHONE_TEL = "+966504779551"
+PHONE_DISPLAY = "+966 50 020 9038"
+PHONE_TEL = "+966500209038"
 CR = "7050745707"
 # Contact form delivery. Leave FORM_ENDPOINT empty to fall back to opening the visitor's email app.
 # Formspree:  FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx"   (FORM_ACCESS_KEY stays empty)

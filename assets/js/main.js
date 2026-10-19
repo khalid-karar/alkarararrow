@@ -60,7 +60,7 @@
       if (form.querySelector('[name="_gotcha"]').value) return; // bot
       if (!valid()) return;
       var data = new FormData(form), endpoint = form.dataset.endpoint;
-      if (endpoint && form.dataset.key) { data.append('access_key', form.dataset.key); data.append('subject', form.dataset.subject); data.append('from_name', 'Alkarar Arrow website'); }
+      if (endpoint && form.dataset.key) { data.append('access_key', form.dataset.key); data.append('subject', form.dataset.subject); data.append('from_name', 'Sahm Alkarar Company website'); }
       if (!endpoint) {
         var lines = []; ['name', 'organization', 'email', 'phone', 'division'].forEach(function (k) { if (data.get(k)) lines.push(k + ': ' + data.get(k)); });
         var body = lines.join('\n') + '\n\n' + data.get('message');

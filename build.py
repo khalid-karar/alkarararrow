@@ -65,15 +65,15 @@ T = {
  "divs": {
   "food": {
    "title": "الأغذية | شركة سهم الكرار",
-   "desc": "قطاع الأغذية في شركة سهم الكرار: توريد وتجارة اللحوم والسكر والمواد الغذائية الأساسية للقطاعين الحكومي والخاص في المملكة العربية السعودية.",
+   "desc": "قطاع الأغذية في شركة سهم الكرار: توريد وتجارة اللحوم والسكر والمواد الغذائية الأساسية للشركات والمؤسسات في المملكة العربية السعودية.",
    "short": "توريد وتجارة المنتجات الغذائية بجودة موثوقة وسلاسل إمداد منضبطة.",
-   "bullets": ["اللحوم والمنتجات الغذائية", "السكر والمواد الأساسية", "التوريد للقطاعين الحكومي والخاص"],
+   "bullets": ["اللحوم والمنتجات الغذائية", "السكر والمواد الأساسية", "التوريد للشركات والمؤسسات"],
    "h1": "الأغذية",
-   "lead": "نورّد ونتاجر في المنتجات الغذائية الأساسية لعملاء القطاعين الحكومي والخاص، بجودة موثوقة وسلاسل إمداد منضبطة.",
+   "lead": "نورّد ونتاجر في المنتجات الغذائية الأساسية للشركات والمؤسسات، بجودة موثوقة وسلاسل إمداد منضبطة.",
    "services_h": "ما نقدمه",
    "services": [("اللحوم", "لحوم الضأن والماعز والأبقار والدواجن للمطاعم والمنشآت والجهات."),
                 ("السكر والمواد الأساسية", "توريد السكر والسلع الغذائية الأساسية بكميات تناسب احتياج العميل."),
-                ("التوريد للجهات", "عقود توريد منتظمة للجهات الحكومية والشركات، بمواعيد واضحة."),
+                ("التوريد للشركات والمؤسسات", "عقود توريد منتظمة للشركات والمؤسسات، بمواعيد واضحة."),
                 ("الجودة والامتثال", "نعمل وفق اشتراطات الجهات الرقابية في المملكة ونوثّق مراحل التوريد.")],
    "cta_h": "تحتاج توريد أغذية لجهتك؟", "cta_p": "أرسل لنا الأصناف والكميات والموعد، ونعود إليك بعرض.", "cta_btn": "اطلب عرض سعر",
    "subject": "طلب عرض سعر - قطاع الأغذية"},
@@ -110,7 +110,7 @@ T = {
    "h1": "المقاولات",
    "lead": "ننفّذ ونُدير المشاريع بمعايير جودة وسلامة واضحة، وبجدول زمني يعرفه العميل من اليوم الأول.",
    "services_h": "ما نقدمه",
-   "services": [("المقاولات العامة", "تنفيذ أعمال المقاولات للمنشآت والمشاريع الحكومية والخاصة."),
+   "services": [("المقاولات العامة", "تنفيذ أعمال المقاولات للمنشآت والمشاريع التجارية والخاصة."),
                 ("إدارة المشاريع", "تخطيط ومتابعة التنفيذ والتكلفة والجودة حتى التسليم."),
                 ("الصيانة والتشغيل", "عقود صيانة وتشغيل تحافظ على المنشأة جاهزة للعمل."),
                 ("السلامة والجودة", "التزام بإجراءات السلامة والجودة في كل موقع.")],
@@ -165,15 +165,15 @@ T = {
  "divs": {
   "food": {
    "title": "Food | Sahm Alkarar Company",
-   "desc": "Sahm Alkarar Company's food division: sourcing and trading of meat, sugar and staple food products for government and private clients in Saudi Arabia.",
+   "desc": "Sahm Alkarar Company's food division: sourcing and trading of meat, sugar and staple food products for companies and institutions in Saudi Arabia.",
    "short": "Sourcing and trading of food products with reliable quality and disciplined supply chains.",
-   "bullets": ["Meat and food products", "Sugar and staple goods", "Supply to government and private sectors"],
+   "bullets": ["Meat and food products", "Sugar and staple goods", "Supply to companies and institutions"],
    "h1": "Food",
-   "lead": "We source and trade staple food products for government and private clients, with reliable quality and a disciplined supply chain.",
+   "lead": "We source and trade staple food products for companies and institutions, with reliable quality and a disciplined supply chain.",
    "services_h": "What we offer",
    "services": [("Meat", "Lamb, goat, beef and poultry for restaurants, facilities and institutions."),
                 ("Sugar and staples", "Supply of sugar and basic food goods in quantities that fit the client's need."),
-                ("Supply to institutions", "Regular supply contracts for government bodies and companies, with clear delivery dates."),
+                ("Supply to companies and institutions", "Regular supply contracts for companies and institutions, with clear delivery dates."),
                 ("Quality and compliance", "We work to the requirements of the Kingdom's regulators and document each stage of supply.")],
    "cta_h": "Need food supply for your organization?", "cta_p": "Send us the items, quantities and date, and we will come back with a quotation.", "cta_btn": "Request a quotation",
    "subject": "Quotation request - Food division"},
@@ -210,7 +210,7 @@ T = {
    "h1": "Contracting",
    "lead": "We deliver and manage projects to clear quality and safety standards, on a schedule the client knows from day one.",
    "services_h": "What we offer",
-   "services": [("General contracting", "Construction works for facilities and for government and private projects."),
+   "services": [("General contracting", "Construction works for facilities and for commercial and private projects."),
                 ("Project management", "Planning and tracking execution, cost and quality through to handover."),
                 ("Maintenance and operations", "Maintenance and operating contracts that keep a facility ready for use."),
                 ("Safety and quality", "Safety and quality procedures followed on every site.")],
@@ -263,11 +263,11 @@ HOW = {
 }
 FAQ = {
  "ar": {"h": "أسئلة شائعة",
-  "food": [("هل تخدمون الجهات الحكومية؟", "نعم، نورّد للقطاعين الحكومي والخاص."), ("ما الذي أحتاجه لطلب عرض سعر؟", "أرسل لنا الأصناف والكميات وموعد التوريد المطلوب، ونعود إليك بعرض."), ("ما أنواع اللحوم المتوفرة؟", "نورّد لحوم الضأن والماعز والأبقار والدواجن.")],
+  "food": [("مع من عملتم؟", "عملنا مع شركة بان القابضة، إحدى شركات مجموعة الحكير، ونحن مسجّلون لدى المراعي وفقيه لمزارع الدواجن."), ("ما الذي أحتاجه لطلب عرض سعر؟", "أرسل لنا الأصناف والكميات وموعد التوريد المطلوب، ونعود إليك بعرض."), ("ما أنواع اللحوم المتوفرة؟", "نورّد لحوم الضأن والماعز والأبقار والدواجن.")],
   "technology": [("هل يمكن نشر النظام على خوادمنا؟", "نعم، يمكن نشر الأنظمة التي نبنيها داخل بيئتك لتبقى بياناتك عندك."), ("هل تبنون أنظمة من الصفر؟", "نعم، نبني الأنظمة حسب إجراءات العميل بدل تطويعه لنظام جاهز."), ("هل يظهر النظام بهوية شركتنا؟", "نعم، يقبل النظام شعار شركتك وألوانها ليظهر باسمك.")],
   "contracting": [("ما المعلومات اللازمة لعرض السعر؟", "نطاق العمل والموقع والموعد المطلوب، وأي مخططات أو متطلبات متوفرة."), ("هل تقدمون الصيانة بعد التسليم؟", "نعم، نقدّم عقود صيانة وتشغيل تبقي المنشأة جاهزة للعمل."), ("كيف تتعاملون مع السلامة والجودة؟", "نلتزم بإجراءات السلامة والجودة في كل موقع ونتابعها خلال التنفيذ.")]},
  "en": {"h": "Frequently asked questions",
-  "food": [("Do you serve government bodies?", "Yes, we supply both government and private sector clients."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
+  "food": [("Who have you worked with?", "We have worked with Baan Holdings, part of the Alhokair Group, and we are registered with Almarai and Fakieh Poultry Farms."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
   "technology": [("Can the system be deployed on our own servers?", "Yes, the systems we build can be deployed inside your environment so your data stays with you."), ("Do you build systems from scratch?", "Yes. We build around the client's procedures instead of bending the client to an off-the-shelf product."), ("Can the system carry our branding?", "Yes. It takes your company's logo and colors so it appears under your name.")],
   "contracting": [("What do you need for a quotation?", "The scope of work, the site and the required date, plus any drawings or requirements you have."), ("Do you provide maintenance after handover?", "Yes, we offer maintenance and operating contracts that keep a facility ready for use."), ("How do you handle safety and quality?", "We follow safety and quality procedures on every site and track them during execution.")]},
 }
@@ -294,14 +294,14 @@ PROFILE = {"ar": {"label": "تحميل ملف الشركة (PDF)", "href": "/dow
            "en": {"label": "Download company profile (PDF)", "href": "/downloads/Sahm-Alkarar-Company-Profile-EN.pdf"}}
 FOUNDER = {
  "ar": {"eyebrow": "القيادة", "h": "المؤسس والرئيس التنفيذي", "name": "خالد عبد الرحمن", "role": "المؤسس والرئيس التنفيذي",
-        "p": ["أسّس خالد شركة سهم الكرار ويقودها من الرياض، وتعمل في ثلاثة قطاعات: الأغذية والتقنية والمقاولات.",
-              "وهو صاحب نظام استقدام360 لإدارة عمليات الاستقدام، الذي بُني من الصفر حول طريقة عمل شركات الاستقدام، ويستخدمه اليوم عملاء حقيقيون.",
-              "يقود توجه الشركة ويشرف على قطاعاتها الثلاثة."],
+        "p": ["خالد عبد الرحمن هو المؤسس والرئيس التنفيذي لشركة سهم الكرار، ويقود عملياتها في المملكة وشراكتها في الولايات المتحدة.",
+              "يتمتع بخبرة عقدين في بناء وتوسيع العمليات القائمة على التقنية في الأسواق المنظَّمة، وتمتد مسيرته بين تنفيذ برمجيات المؤسسات، والتحول الرقمي الحكومي، واستراتيجية التشغيل العابرة للحدود في الولايات المتحدة ودول الخليج.",
+              "وهو صاحب نظام استقدام360 لإدارة عمليات الاستقدام."],
         "alt": "خالد عبد الرحمن، المؤسس والرئيس التنفيذي لشركة سهم الكرار"},
  "en": {"eyebrow": "Leadership", "h": "Founder and CEO", "name": "Khalid Abdelrahman", "role": "Founder and Chief Executive Officer",
-        "p": ["Khalid founded Sahm Alkarar Company and leads it from Riyadh. The company works in three divisions: Food, Technology and Contracting.",
-              "He is the owner of Istiqdam360, a system for managing recruitment operations, built from scratch around how recruitment companies work and used today by real clients.",
-              "He sets the company's direction and oversees its three divisions."],
+        "p": ["Khalid Abdelrahman is the Founder and CEO of Sahm Alkarar Company. He leads the company's operations in the Kingdom and its partnership in the United States.",
+              "He brings two decades of experience building and scaling technology-driven operations across regulated markets. His career spans enterprise software delivery, government digital transformation, and cross-border operating strategy in the US and GCC.",
+              "He is also the owner of Istiqdam360, a system for managing recruitment operations."],
         "alt": "Khalid Abdelrahman, Founder and CEO of Sahm Alkarar Company"},
 }
 PROOF = {
@@ -313,8 +313,8 @@ PROOF = {
               "contracting": "We are preparing the Contracting division's project portfolio and client references to publish here. Until then, you can read the company profile or talk to us directly."}},
 }
 SERVE = {
- "ar": {"h": "نخدم", "food": ["المطاعم", "المنشآت والمؤسسات", "الجهات الحكومية", "الشركات"], "technology": ["الشركات", "المنشآت والجهات", "شركات الاستقدام"], "contracting": ["المنشآت", "المشاريع الحكومية", "المشاريع الخاصة"]},
- "en": {"h": "Who we serve", "food": ["Restaurants", "Facilities and institutions", "Government bodies", "Companies"], "technology": ["Companies", "Organizations and institutions", "Recruitment companies"], "contracting": ["Facilities", "Government projects", "Private projects"]},
+ "ar": {"h": "نخدم", "food": ["المطاعم", "المنشآت والمؤسسات", "الشركات"], "technology": ["الشركات", "المنشآت والجهات", "شركات الاستقدام"], "contracting": ["المنشآت", "المشاريع التجارية", "المشاريع الخاصة"]},
+ "en": {"h": "Who we serve", "food": ["Restaurants", "Facilities and institutions", "Companies"], "technology": ["Companies", "Organizations and institutions", "Recruitment companies"], "contracting": ["Facilities", "Commercial projects", "Private projects"]},
 }
 STORY = {
  "ar": {"eyebrow": "الاسم والشعار", "h": "ثلاثة رموز، وعد واحد",
@@ -323,6 +323,37 @@ STORY = {
         "items": [("arrow", "The arrow", "A steady direction toward the objective."), ("shield", "The shield", "Strong protection for everything we commit to."), ("falcon", "The falcon", "Speed in execution.")]},
 }
 BAND = {"ar": ["ثبات", "دقة", "التزام"], "en": ["Conviction", "Precision", "Commitment"]}
+
+CLIENTS = {
+ "ar": {"eyebrow": "الثقة", "h": "عملاؤنا وتسجيلاتنا", "worked": "عملنا مع", "reg": "مسجّلون لدى",
+        "baan": "بان القابضة، مجموعة الحكير", "almarai": "المراعي", "fakieh": "فقيه لمزارع الدواجن"},
+ "en": {"eyebrow": "Trust", "h": "Clients and registrations", "worked": "Worked with", "reg": "Registered with",
+        "baan": "Baan Holdings, Alhokair Group", "almarai": "Almarai", "fakieh": "Fakieh Poultry Farms"},
+}
+TECHX = {
+ "ar": {"cap_eyebrow": "الذكاء التطبيقي", "cap_h": "ذكاء يعمل داخل سير العمل",
+        "caps": [("أتمتة سير العمل", "أتمتة الإجراءات الداخلية كثيرة الحجم من الاستلام حتى الاعتماد، مع إمكانية التدخل البشري."),
+                 ("ذكاء الصوت والخدمة", "ذكاء صوتي ومساعدو موظفي الخدمة بالعربية والإنجليزية، مع التصعيد إلى الموظف عند الحاجة."),
+                 ("عمليات الامتثال والمخاطر", "معالجة حالات تتبع قواعد السياسات وتترك سجل تدقيق واضحًا."),
+                 ("ذكاء المستندات والمعرفة", "بحث واستخراج خاص مع تتبع المصدر عبر مستندات ضخمة بالعربية والإنجليزية."),
+                 ("ذكاء الميدان والأصول", "رؤية واضحة للأصول وفرق الميدان من الصور والمستشعرات وأوامر العمل."),
+                 ("منصات مخصصة ووكلاء خاصون", "منصات وبيئات وكلاء تُبنى لحاجتك وتعمل داخل بنيتك التقنية.")],
+        "how_h": "كيف نبني",
+        "how": [("نشر يناسبك", "سحابي أو سحابة خاصة أو داخل منشأتك أو هجين، بحسب ما يتطلبه الأمن وطبيعة البيانات."),
+                ("تحكم بشري", "مراجعة بشرية ومسارات تصعيد وسجلات تدقيق في صلب كل نظام."),
+                ("معايير نصمّم عليها", "نصمّم بما يتوافق مع نظام حماية البيانات الشخصية وضوابط الهيئة الوطنية للأمن السيبراني وإرشادات سدايا.")]},
+ "en": {"cap_eyebrow": "Applied AI", "cap_h": "Intelligence that works inside the workflow",
+        "caps": [("Workflow automation", "Automating high-volume internal processes from intake to approval, with human override."),
+                 ("Voice and service AI", "Arabic and English voice AI and agent copilots for service handling, with escalation to people."),
+                 ("Compliance and risk operations", "Case handling that follows policy rules and leaves a clear audit trail."),
+                 ("Document and knowledge intelligence", "Private, source-traced search and extraction across large document estates, in Arabic and English."),
+                 ("Field and asset intelligence", "Clear visibility of assets and field teams from imagery, sensors and work orders."),
+                 ("Custom platforms and private agents", "Purpose-built platforms and agent environments that run inside your own infrastructure.")],
+        "how_h": "How we build",
+        "how": [("Deployment that fits", "Cloud, private cloud, on-premises or hybrid, according to security and data needs."),
+                ("Human control", "Human review, escalation paths and audit logs built into every system."),
+                ("Standards we design to", "We design to align with the Personal Data Protection Law, NCA's cybersecurity controls and SDAIA guidance.")]},
+}
 
 # ----------------------------------------------------------------- helpers
 def esc(s): return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
@@ -494,7 +525,7 @@ def story_html(lang):
     items = "".join(f'<li data-k="{k}"><span class="n" aria-hidden="true">0{i+1}</span><h3>{a}</h3><p>{c}</p></li>' for i, (k, a, c) in enumerate(S["items"]))
     dots = "".join(f'<i class="pt" style="left:{pts[k][0]}%;top:{pts[k][1]}%" data-k="{k}" aria-hidden="true"></i>' for k, _, _ in S["items"])
     return f'''<section id="story" class="story"><div class="wrap cols" style="align-items:center">
-  <div class="mark-big"><div class="emb2"><img src="/assets/img/mark.png" alt="" width="447" height="468" loading="lazy"><span class="sheen" style="--m:url(/assets/img/mark.png)" aria-hidden="true"></span>{dots}</div></div>
+  <div class="mark-big"><div class="emb2"><img src="/assets/img/mark.png" alt="" width="447" height="468" loading="lazy"><span class="sheen" style="--m:url(/assets/img/mark.png)" aria-hidden="true"></span></div></div>
   <div class="stack g28"><div class="stack g12"><p class="eyebrow">{S["eyebrow"]}</p><h2>{S["h"]}</h2></div><ol class="story-list">{items}</ol></div>
 </div></section>
 '''
@@ -517,6 +548,21 @@ def serve_html(lang, d):
     S = SERVE[lang]
     chips = "".join(f"<li>{esc(x)}</li>" for x in S[d])
     return f'''<section class="serve"><div class="wrap serve-row"><h2>{S["h"]}</h2><ul class="chips">{chips}</ul></div></section>
+'''
+
+def clients_html(lang):
+    C = CLIENTS[lang]
+    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
+    return f'''<section id="clients"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{C["eyebrow"]}</p><h2>{C["h"]}</h2></div>
+  <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("baan")}</div></div><div class="lg"><h3>{C["reg"]}</h3><div class="logos">{fig("almarai")}{fig("fakieh")}</div></div></div></div></section>
+'''
+
+def techx_html(lang):
+    X = TECHX[lang]
+    caps = "".join(f'<div class="card"><h3 style="font-size:22px">{esc(a)}</h3><p style="margin-top:10px">{esc(c)}</p></div>' for a, c in X["caps"])
+    how = "".join(f'<li><span class="n" aria-hidden="true">0{i+1}</span><div><h3>{esc(a)}</h3><p>{esc(c)}</p></div></li>' for i, (a, c) in enumerate(X["how"]))
+    return f'''<section id="capabilities" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{X["cap_eyebrow"]}</p><h2>{X["cap_h"]}</h2></div><div class="cards cards-technology">{caps}</div>
+  <div class="stack g28"><h2 style="font-size:clamp(22px,3vw,30px)">{X["how_h"]}</h2><ol class="steps">{how}</ol></div></div></section>
 '''
 
 def home(lang):
@@ -554,7 +600,7 @@ def home(lang):
     <div class="cards">{cards}</div>
   </div>
 </section>
-<section id="product">
+{clients_html(lang)}<section id="product">
   <div class="wrap">
     <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1400" height="440" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
   </div>
@@ -614,7 +660,7 @@ def division(lang, d):
     <div class="cards cards-{d}">{cards}</div>
   </div>
 </section>
-{work}{proof_html(lang, d) if d != "technology" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
+{techx_html(lang) if d == "technology" else ""}{work}{clients_html(lang) if d == "food" else ""}{proof_html(lang, d) if d == "contracting" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
   <div class="wrap cols">
     <div class="stack g28"><div class="stack g12"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
       <div class="btns"><a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>

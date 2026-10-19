@@ -358,3 +358,8 @@ html[lang="ar"] .lg h3{letter-spacing:.04em;text-transform:none;font-size:16px!i
 .plate{background:#fff;height:112px;min-width:200px;padding:16px 24px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-3);box-shadow:0 14px 34px rgba(0,0,0,.45)}
 .plate img{max-height:76px;max-width:170px;width:auto;height:auto;display:block}
 .logos figcaption{font-size:14px;color:var(--dim);max-width:200px}
+
+.btn.soon{cursor:default;color:var(--dim);border-style:dashed;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn.soon:hover{border-color:var(--line-3);color:var(--dim)}
+.btn.soon em{font-style:normal;font-size:13px;color:var(--gold);border:1px solid var(--line-3);padding:2px 10px}
+#profiles .card .btn{font-size:16px;padding:12px 22px}

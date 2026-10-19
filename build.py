@@ -295,22 +295,20 @@ PROFILE = {"ar": {"label": "تحميل ملف الشركة (PDF)", "href": "/dow
 FOUNDER = {
  "ar": {"eyebrow": "القيادة", "h": "المؤسس والرئيس التنفيذي", "name": "خالد عبد الرحمن", "role": "المؤسس والرئيس التنفيذي",
         "p": ["خالد عبد الرحمن هو المؤسس والرئيس التنفيذي لشركة سهم الكرار، ويقود عملياتها في المملكة وشراكتها في الولايات المتحدة.",
-              "يتمتع بخبرة عقدين في بناء وتوسيع العمليات القائمة على التقنية في الأسواق المنظَّمة، وتمتد مسيرته بين تنفيذ برمجيات المؤسسات، والتحول الرقمي الحكومي، واستراتيجية التشغيل العابرة للحدود في الولايات المتحدة ودول الخليج.",
-              "وهو صاحب نظام استقدام360 لإدارة عمليات الاستقدام."],
+              "يتمتع بخبرة عقدين في بناء وتوسيع العمليات القائمة على التقنية في الأسواق المنظَّمة، وتمتد مسيرته بين تنفيذ برمجيات المؤسسات، والتحول الرقمي الحكومي، واستراتيجية التشغيل العابرة للحدود في الولايات المتحدة ودول الخليج."],
         "alt": "خالد عبد الرحمن، المؤسس والرئيس التنفيذي لشركة سهم الكرار"},
  "en": {"eyebrow": "Leadership", "h": "Founder and CEO", "name": "Khalid Abdelrahman", "role": "Founder and Chief Executive Officer",
         "p": ["Khalid Abdelrahman is the Founder and CEO of Sahm Alkarar Company. He leads the company's operations in the Kingdom and its partnership in the United States.",
-              "He brings two decades of experience building and scaling technology-driven operations across regulated markets. His career spans enterprise software delivery, government digital transformation, and cross-border operating strategy in the US and GCC.",
-              "He is also the owner of Istiqdam360, a system for managing recruitment operations."],
+              "He brings two decades of experience building and scaling technology-driven operations across regulated markets. His career spans enterprise software delivery, government digital transformation, and cross-border operating strategy in the US and GCC."],
         "alt": "Khalid Abdelrahman, Founder and CEO of Sahm Alkarar Company"},
 }
 PROOF = {
  "ar": {"badge": "قريبًا", "h": "سجل الأعمال والمراجع",
-        "p": {"food": "نُعدّ ملف أعمال قطاع الأغذية ومراجع العملاء ليُنشر هنا. إلى حين ذلك، يمكنك الاطلاع على ملف الشركة أو التواصل معنا مباشرة.",
-              "contracting": "نُعدّ ملف مشاريع قطاع المقاولات ومراجع العملاء ليُنشر هنا. إلى حين ذلك، يمكنك الاطلاع على ملف الشركة أو التواصل معنا مباشرة."}},
+        "p": {"food": "نُعدّ ملف أعمال قطاع الأغذية ومراجع العملاء ليُنشر هنا. إلى حين ذلك، يسعدنا التواصل معك مباشرة.",
+              "contracting": "نُعدّ ملف مشاريع قطاع المقاولات ومراجع العملاء ليُنشر هنا. إلى حين ذلك، يسعدنا التواصل معك مباشرة."}},
  "en": {"badge": "Coming soon", "h": "Track record and references",
-        "p": {"food": "We are preparing the Food division's portfolio and client references to publish here. Until then, you can read the company profile or talk to us directly.",
-              "contracting": "We are preparing the Contracting division's project portfolio and client references to publish here. Until then, you can read the company profile or talk to us directly."}},
+        "p": {"food": "We are preparing the Food division's portfolio and client references to publish here. Until then, we are glad to talk to you directly.",
+              "contracting": "We are preparing the Contracting division's project portfolio and client references to publish here. Until then, we are glad to talk to you directly."}},
 }
 SERVE = {
  "ar": {"h": "نخدم", "food": ["المطاعم", "المنشآت والمؤسسات", "الشركات"], "technology": ["الشركات", "المنشآت والجهات", "شركات الاستقدام"], "contracting": ["المنشآت", "المشاريع التجارية", "المشاريع الخاصة"]},
@@ -354,6 +352,24 @@ TECHX = {
                 ("Human control", "Human review, escalation paths and audit logs built into every system."),
                 ("Standards we design to", "We design to align with the Personal Data Protection Law, NCA's cybersecurity controls and SDAIA guidance.")]},
 }
+
+PROFILES = {
+ "ar": {"eyebrow": "ملفات التعريف", "h": "ملف تعريف لكل قطاع", "p": "اختر القطاع لتحميل ملف التعريف الخاص به.", "soon": "قريبًا",
+        "overview": "ملف الشركة العام (PDF)", "foot": "ملفات تعريف القطاعات",
+        "names": {"food": "قطاع الأغذية", "technology": "قطاع التقنية", "contracting": "قطاع المقاولات"},
+        "dl": {"food": "ملف قطاع الأغذية", "technology": "تحميل ملف قطاع التقنية (PDF)", "contracting": "ملف قطاع المقاولات"},
+        "file": {"technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
+ "en": {"eyebrow": "Profiles", "h": "A profile for each division", "p": "Choose a division to download its profile.", "soon": "Coming soon",
+        "overview": "Company overview (PDF)", "foot": "Division profiles",
+        "names": {"food": "Food division", "technology": "Technology division", "contracting": "Contracting division"},
+        "dl": {"food": "Food division profile", "technology": "Download the Technology division profile (Arabic, PDF)", "contracting": "Contracting division profile"},
+        "file": {"technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
+}
+def prof_btn(lang, d, gold=True):
+    P = PROFILES[lang]
+    if d in P["file"]:
+        return f'<a class="btn{" gold" if gold else ""}" href="{P["file"][d]}" download>{P["dl"][d]}</a>'
+    return f'<span class="btn soon" aria-disabled="true">{P["dl"][d]} <em>{P["soon"]}</em></span>'
 
 # ----------------------------------------------------------------- helpers
 def esc(s): return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
@@ -440,7 +456,7 @@ def footer(lang):
       <li>{L["hq_val"]}</li></ul></div>
     <div><h2>{L["company_h"]}</h2><ul>
       <li>{L["cr"]}: <bdi>{CR}</bdi></li>
-      <li><a href="{PROFILE[lang]["href"]}" download>{PROFILE[lang]["label"]}</a></li>
+      <li><a href="{b}#profiles">{PROFILES[lang]["foot"]}</a></li>
       <li><a href="{PRODUCT_URL[lang]}" target="_blank" rel="noopener">{PRODUCT_NAME[lang]}</a></li>
       <li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
     <p class="fine">© 2026 {esc(t["brand"])}. {L["rights"]}.</p>
@@ -541,7 +557,7 @@ def founder_html(lang):
 def proof_html(lang, d):
     P = PROOF[lang]
     return f'''<section id="proof"><div class="wrap"><div class="proof"><span class="tag">{P["badge"]}</span><div class="stack g12"><h2>{P["h"]}</h2><p class="muted">{esc(P["p"][d])}</p></div>
-  <div class="btns"><a class="btn gold" href="{PROFILE[lang]["href"]}" download>{PROFILE[lang]["label"]}</a><a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a></div></div></div></section>
+  <div class="btns">{prof_btn(lang, d)}<a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a></div></div></div></section>
 '''
 
 def serve_html(lang, d):
@@ -563,6 +579,13 @@ def techx_html(lang):
     how = "".join(f'<li><span class="n" aria-hidden="true">0{i+1}</span><div><h3>{esc(a)}</h3><p>{esc(c)}</p></div></li>' for i, (a, c) in enumerate(X["how"]))
     return f'''<section id="capabilities" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{X["cap_eyebrow"]}</p><h2>{X["cap_h"]}</h2></div><div class="cards cards-technology">{caps}</div>
   <div class="stack g28"><h2 style="font-size:clamp(22px,3vw,30px)">{X["how_h"]}</h2><ol class="steps">{how}</ol></div></div></section>
+'''
+
+def profiles_html(lang):
+    P = PROFILES[lang]; t = T[lang]
+    cards = "".join(f'''<div class="card">{ICONS[d]}<h3 style="font-size:24px;margin-top:6px">{P["names"][d]}</h3><div style="margin-top:18px">{prof_btn(lang, d, d in P["file"])}</div></div>''' for d in DIVS)
+    return f'''<section id="profiles" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{P["eyebrow"]}</p><h2>{P["h"]}</h2><p class="muted">{P["p"]}</p></div>
+  <div class="cards">{cards}</div><p><a class="more" href="{PROFILE[lang]["href"]}" download>{P["overview"]}</a></p></div></section>
 '''
 
 def home(lang):
@@ -590,7 +613,7 @@ def home(lang):
 </section>
 <section id="about" class="alt">
   <div class="wrap cols">
-    <div class="stack g20"><p class="eyebrow">{h["about_eyebrow"]}</p><h2>{h["about_h"]}</h2><p class="muted">{h["about_p"]}</p><div class="btns"><a class="btn" href="{PROFILE[lang]["href"]}" download>{PROFILE[lang]["label"]}</a></div></div>
+    <div class="stack g20"><p class="eyebrow">{h["about_eyebrow"]}</p><h2>{h["about_h"]}</h2><p class="muted">{h["about_p"]}</p><div class="btns"><a class="btn" href="#profiles">{PROFILES[lang]["eyebrow"]}</a></div></div>
     <div>{princ}</div>
   </div>
 </section>
@@ -600,7 +623,7 @@ def home(lang):
     <div class="cards">{cards}</div>
   </div>
 </section>
-{clients_html(lang)}<section id="product">
+{clients_html(lang)}{profiles_html(lang)}<section id="product">
   <div class="wrap">
     <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1400" height="440" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
   </div>
@@ -663,7 +686,7 @@ def division(lang, d):
 {techx_html(lang) if d == "technology" else ""}{work}{clients_html(lang) if d == "food" else ""}{proof_html(lang, d) if d == "contracting" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
   <div class="wrap cols">
     <div class="stack g28"><div class="stack g12"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
-      <div class="btns"><a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>
+      <div class="btns">{prof_btn(lang, d, False) if d == "technology" else ""}<a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>
     {form_html(lang, d)}
   </div>
 </section>

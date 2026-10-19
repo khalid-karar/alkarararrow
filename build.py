@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static site generator for Alkarar Arrow (Arabic + English).
+"""Static site generator for Sahm Alkarar (Arabic + English).
 
 Run `python3 build.py` after editing the content below. It rewrites every
 HTML page, sitemap.xml and 404.html. No dependencies beyond Python 3.
@@ -10,8 +10,8 @@ import hashlib
 def _v(p): return hashlib.md5(open(p,"rb").read()).hexdigest()[:8]
 CSS="/assets/css/style.css?v="+_v("assets/css/style.css")
 JS="/assets/js/main.js?v="+_v("assets/js/main.js")
-SITE = "https://alkarararrow.com"
-EMAIL = "info@alkarararrow.com"
+SITE = "https://sahmalkarar.sa"
+EMAIL = "info@sahmalkarar.sa"
 PHONE_DISPLAY = "+966 50 020 9038"
 PHONE_TEL = "+966500209038"
 CR = "7050745707"
@@ -58,7 +58,7 @@ T = {
   "contact_p": "اكتب لنا عن احتياجك، وسيعود إليك فريق القطاع المختص.",
  },
  "labels": {"email": "البريد الإلكتروني", "phone": "الهاتف", "hq": "المقر الرئيسي", "cr": "السجل التجاري",
-            "hq_val": "الرياض، غرناطة، طريق الإمام عبدالله بن سعود",
+            "hq_val": "الرياض، حي العليا، 7854 سكاكا 12313",
             "parent": "الشركة الأم: الإسكندرية، فرجينيا، الولايات المتحدة الأمريكية",
             "contact_h": "تواصل", "div_h": "القطاعات", "company_h": "الشركة", "privacy": "سياسة الخصوصية",
             "rights": "جميع الحقوق محفوظة"},
@@ -134,19 +134,19 @@ T = {
 "en": {
  "dir": "ltr", "lang": "en", "base": "/en/", "other": "ar", "other_label": "العربية", "other_short": "عربي",
  "fonts": "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap",
- "brand": "Alkarar Arrow", "locale": "en_US", "other_locale": "ar_SA",
+ "brand": "Sahm Alkarar", "locale": "en_US", "other_locale": "ar_SA",
  "skip": "Skip to content",
  "nav": {"about": "About", "divisions": "Divisions", "contact": "Contact"},
  "home_label": "Home",
  "div_names": {"food": "Food", "technology": "Technology", "contracting": "Contracting"},
  "home": {
-  "title": "Alkarar Arrow | Food, Technology and Contracting in Saudi Arabia",
-  "desc": "Alkarar Arrow is a Saudi group based in Riyadh working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
+  "title": "Sahm Alkarar | Food, Technology and Contracting in Saudi Arabia",
+  "desc": "Sahm Alkarar is a Saudi group based in Riyadh working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
   "eyebrow": "Riyadh · Saudi Arabia",
   "h1": "Boldness that hits the mark.",
   "lead": "A Saudi group working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
   "cta1": "Contact us", "cta2": "Our divisions",
-  "logo_alt": "Alkarar Arrow logo",
+  "logo_alt": "Sahm Alkarar logo",
   "about_eyebrow": "About",
   "about_h": "A name that carries the meaning of courage",
   "about_p": "Al-Karrar is the one who charges the objective and does not turn back; the arrow is precision in hitting it. From those two ideas came the name and the mark: a falcon, an arrow and a shield, standing for steady direction, strong protection and fast execution.",
@@ -158,14 +158,14 @@ T = {
   "contact_p": "Tell us what you need, and the team for the right division will get back to you.",
  },
  "labels": {"email": "Email", "phone": "Phone", "hq": "Headquarters", "cr": "C.R. number",
-            "hq_val": "Riyadh, Granada, Imam Abdullah bin Saud Road",
+            "hq_val": "Riyadh, Al Olaya, 7854 Sakaka 12313",
             "parent": "Parent company: Alexandria, Virginia, United States of America",
             "contact_h": "Contact", "div_h": "Divisions", "company_h": "Company", "privacy": "Privacy policy",
             "rights": "All rights reserved"},
  "divs": {
   "food": {
-   "title": "Food | Alkarar Arrow",
-   "desc": "Alkarar Arrow's food division: sourcing and trading of meat, sugar and staple food products for government and private clients in Saudi Arabia.",
+   "title": "Food | Sahm Alkarar",
+   "desc": "Sahm Alkarar's food division: sourcing and trading of meat, sugar and staple food products for government and private clients in Saudi Arabia.",
    "short": "Sourcing and trading of food products with reliable quality and disciplined supply chains.",
    "bullets": ["Meat and food products", "Sugar and staple goods", "Supply to government and private sectors"],
    "h1": "Food",
@@ -178,8 +178,8 @@ T = {
    "cta_h": "Need food supply for your organization?", "cta_p": "Send us the items, quantities and date, and we will come back with a quotation.", "cta_btn": "Request a quotation",
    "subject": "Quotation request - Food division"},
   "technology": {
-   "title": "Technology | Alkarar Arrow",
-   "desc": "Alkarar Arrow's technology division: AI and business automation, IT and networking, cybersecurity and technology consulting, with a recruitment management system as previous work.",
+   "title": "Technology | Sahm Alkarar",
+   "desc": "Sahm Alkarar's technology division: AI and business automation, IT and networking, cybersecurity and technology consulting, with a recruitment management system as previous work.",
    "short": "AI, IT and networking solutions, with technology consulting for organizations and companies.",
    "bullets": ["AI and business automation", "IT and networking", "Technology consulting"],
    "h1": "Technology",
@@ -191,7 +191,7 @@ T = {
                 ("Custom systems", "Systems built from scratch around the client's procedures, instead of bending the client to an off-the-shelf product."),
                 ("Technology consulting", "Assessing the current state, setting priorities and a clear roadmap to execute.")],
    "work_eyebrow": "Our products", "work_h": "Istiqdam360: recruitment management system",
-   "work_tag": "A product by Alkarar Arrow", "work_name": "Istiqdam360",
+   "work_tag": "A product by Sahm Alkarar", "work_name": "Istiqdam360",
    "work_p": "An end-to-end system for managing recruitment operations, built from scratch around how recruitment companies work. It tracks each worker from contract signing to arrival and keeps the client informed at every step.",
    "prod_visit": "Visit the Istiqdam360 site", "prod_url": "https://istiqdam360.netlify.app/en/", "prod_alt": "Istiqdam360 logo",
    "shot1_alt": "Recruitment management system dashboard showing contract and worker indicators", "shot2_alt": "Workers management screen of the recruitment system with filters and search", "shot_note": "Screens from the system, with real data blurred.", "shot1_cap": "Tracking dashboard", "shot2_cap": "Workers management", "open_full": "open full size",
@@ -203,8 +203,8 @@ T = {
    "cta_h": "Have an idea or a system you need built?", "cta_p": "Tell us which process you want to simplify and we will propose the solution.", "cta_btn": "Discuss your project",
    "subject": "Inquiry - Technology division"},
   "contracting": {
-   "title": "Contracting | Alkarar Arrow",
-   "desc": "Alkarar Arrow's contracting division: general contracting, project management and execution, and maintenance and operations to clear quality and safety standards in Saudi Arabia.",
+   "title": "Contracting | Sahm Alkarar",
+   "desc": "Sahm Alkarar's contracting division: general contracting, project management and execution, and maintenance and operations to clear quality and safety standards in Saudi Arabia.",
    "short": "Delivery and management of projects to quality and safety standards, on schedule.",
    "bullets": ["General contracting", "Project management and execution", "Maintenance and operations"],
    "h1": "Contracting",
@@ -218,12 +218,12 @@ T = {
    "subject": "Quotation request - Contracting division"},
  },
  "privacy": {
-  "title": "Privacy policy | Alkarar Arrow",
-  "desc": "How Alkarar Arrow handles the data it receives by email and through this website.",
+  "title": "Privacy policy | Sahm Alkarar",
+  "desc": "How Sahm Alkarar handles the data it receives by email and through this website.",
   "h1": "Privacy policy",
   "effective": "Effective date: October 2026",
   "body": [
-   ("1. Who we are", "Alkarar Arrow (Riyadh, Kingdom of Saudi Arabia) operates this website and related services. References to \"Alkarar Arrow\", \"we\" or \"our\" refer to this entity."),
+   ("1. Who we are", "Sahm Alkarar (Riyadh, Kingdom of Saudi Arabia) operates this website and related services. References to \"Sahm Alkarar\", \"we\" or \"our\" refer to this entity."),
    ("2. Information we collect", "This website does not collect personal data from visitors automatically and does not use cookies. If you contact us by email or phone, we receive your name, organization, contact details and the content of your inquiry."),
    ("3. How we use your information", "We use the information you send to respond to your inquiry, evaluate potential engagements and keep records of institutional communications. We do not sell, rent or share your personal data with third parties for marketing purposes."),
    ("4. Data residency", "Data received through this website is processed in accordance with the requirements of the Personal Data Protection Law (PDPL) and applicable SDAIA guidance."),
@@ -249,7 +249,7 @@ FORM = {
 }
 PRODUCT_URL = {"ar": "https://istiqdam360.netlify.app/", "en": "https://istiqdam360.netlify.app/en/"}
 PRODUCT_NAME = {"ar": "منتجنا: استقدام360", "en": "Our product: Istiqdam360"}
-PRODUCT_BLURB = {"ar": "من تقنية سهم الكرار: نظام يدير الاستقدام من العقد حتى وصول العامل.", "en": "From Alkarar Arrow Technology: a system that runs recruitment from contract to arrival."}
+PRODUCT_BLURB = {"ar": "من تقنية سهم الكرار: نظام يدير الاستقدام من العقد حتى وصول العامل.", "en": "From Sahm Alkarar Technology: a system that runs recruitment from contract to arrival."}
 PRODUCT_BTN = {"ar": "تعرّف على استقدام360", "en": "Explore Istiqdam360"}
 LB = {"ar": "إغلاق", "en": "Close"}
 MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "Close menu")}
@@ -375,9 +375,9 @@ def contact_rows(lang):
 
 def org_ld(lang):
     t = T[lang]
-    return {"@context": "https://schema.org", "@type": "Organization", "name": "Alkarar Arrow", "alternateName": "سهم الكرار",
+    return {"@context": "https://schema.org", "@type": "Organization", "name": "Sahm Alkarar", "alternateName": "سهم الكرار",
             "url": SITE + "/", "logo": SITE + "/assets/img/icon-512.png", "email": EMAIL, "telephone": PHONE_TEL,
-            "address": {"@type": "PostalAddress", "streetAddress": "Granada, Imam Abdullah bin Saud Road", "addressLocality": "Riyadh", "addressCountry": "SA"},
+            "address": {"@type": "PostalAddress", "streetAddress": "7854 Sakaka, Al Olaya", "addressLocality": "Riyadh", "postalCode": "12313", "addressCountry": "SA"},
             "areaServed": "SA", "identifier": CR}
 
 def crumb_ld(lang, key):
@@ -448,7 +448,7 @@ def home(lang):
       <p class="lead">{h["lead"]}</p>
       <div class="btns"><a class="btn gold" href="#contact">{h["cta1"]}</a><a class="btn" href="#divisions">{h["cta2"]}</a></div>
     </div>
-    <div class="hero-art"><img src="{logo}" alt="{h["logo_alt"]}" width="440" height="{ '486' if lang == 'ar' else '349'}" fetchpriority="high"></div>
+    <div class="hero-art"><img src="{logo}" alt="{h["logo_alt"]}" width="440" height="{ '486' if lang == 'ar' else '397'}" fetchpriority="high"></div>
   </div>
 </section>
 <section id="about" class="alt">
@@ -514,7 +514,7 @@ def division(lang, d):
     <h1>{dv["h1"]}</h1>
     <p class="lead">{dv["lead"]}</p>
     </div>
-    <div class="div-logo"><img src="/assets/img/div-{d}-{lang}.webp" alt="{'سهم الكرار - ' if lang == 'ar' else 'Alkarar Arrow - '}{t["div_names"][d]}" width="640" height="640" fetchpriority="high"></div>
+    <div class="div-logo"><img src="/assets/img/div-{d}-{lang}.webp" alt="{'سهم الكرار - ' if lang == 'ar' else 'Sahm Alkarar - '}{t["div_names"][d]}" width="640" height="640" fetchpriority="high"></div>
   </div>
 </section>
 <section>
@@ -584,7 +584,7 @@ if __name__ == "__main__":
     write("404.html", notfound())
     write("sitemap.xml", sitemap())
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
-    write("site.webmanifest", json.dumps({"name": "Alkarar Arrow | سهم الكرار", "short_name": "Alkarar Arrow", "start_url": "/", "display": "browser",
+    write("site.webmanifest", json.dumps({"name": "Sahm Alkarar | سهم الكرار", "short_name": "Sahm Alkarar", "start_url": "/", "display": "browser",
         "background_color": "#0b0b0d", "theme_color": "#0b0b0d",
         "icons": [{"src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png"}]}, ensure_ascii=False, indent=2) + "\n")
     write("_headers", """/*

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alkarararrow.com/sitemap.xml
+Sitemap: https://sahmalkarar.sa/sitemap.xml

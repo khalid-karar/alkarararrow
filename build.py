@@ -21,6 +21,8 @@ CR = "7050745707"
 # Then run build.py and commit. The Content-Security-Policy in _headers already allows both services.
 FORM_ENDPOINT = ""
 FORM_ACCESS_KEY = ""
+_P = lambda f: f'<link rel="preload" href="/assets/fonts/{f}-normal.woff2" as="font" type="font/woff2" crossorigin>\n'
+PRELOAD = {"ar": _P("ibm-plex-sans-arabic-arabic-400") + _P("reem-kufi-arabic-700"), "en": _P("ibm-plex-sans-latin-400") + _P("ibm-plex-sans-latin-600")}
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 ICONS = {
@@ -33,7 +35,6 @@ ICONS = {
 T = {
 "ar": {
  "dir": "rtl", "lang": "ar", "base": "/", "other": "en", "other_label": "English", "other_short": "EN",
- "fonts": "https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap",
  "brand": "شركة سهم الكرار", "locale": "ar_SA", "other_locale": "en_US",
  "skip": "انتقل إلى المحتوى",
  "nav": {"about": "عن الشركة", "divisions": "قطاعاتنا", "contact": "تواصل معنا"},
@@ -41,15 +42,15 @@ T = {
  "div_names": {"food": "الأغذية", "technology": "التقنية", "contracting": "المقاولات"},
  "home": {
   "title": "شركة سهم الكرار | الأغذية والتقنية والمقاولات في المملكة العربية السعودية",
-  "desc": "شركة سهم الكرار مجموعة سعودية في الرياض تعمل في الأغذية والتقنية والمقاولات. نبدأ بثبات، ونُنفّذ بدقة، ونلتزم بما نعد به.",
+  "desc": "شركة سهم الكرار شركة سعودية في الرياض تعمل في الأغذية والتقنية والمقاولات. نبدأ بثبات، ونُنفّذ بدقة، ونلتزم بما نعد به.",
   "eyebrow": "الرياض · المملكة العربية السعودية",
   "h1": "إقدامٌ يُصيب الهدف",
-  "lead": "مجموعة سعودية تعمل في الأغذية والتقنية والمقاولات. نبدأ بثبات، ونُنفّذ بدقة، ونلتزم بما نعد به.",
+  "lead": "شركة سعودية تعمل في الأغذية والتقنية والمقاولات. نبدأ بثبات، ونُنفّذ بدقة، ونلتزم بما نعد به.",
   "cta1": "تواصل معنا", "cta2": "قطاعاتنا",
   "logo_alt": "شعار سهم الكرار",
   "about_eyebrow": "عن الشركة",
   "about_h": "اسمٌ يحمل معنى الإقدام",
-  "about_p": "الكرّار هو من يكرّ على الهدف ولا يتراجع، والسهم هو الدقة في الإصابة. من هذين المعنيين جاء اسم الشركة وشعارها: صقر وسهم ودرع، ثلاث صور لثبات الاتجاه وقوة الحماية وسرعة التنفيذ.",
+  "about_p": "الكرّار هو من يكرّ على الهدف ولا يتراجع، والسهم هو الدقة في الإصابة. ومن هذين المعنيين جاء الاسم والشعار.",
   "principles": [("الثبات", "نختار اتجاهنا بعناية، ثم نمضي فيه حتى النتيجة."),
                  ("الدقة", "جودة محسوبة في كل مرحلة، من التوريد إلى التسليم."),
                  ("الالتزام", "مواعيد واضحة ووعود قابلة للقياس مع كل عميل وشريك.")],
@@ -64,11 +65,12 @@ T = {
             "rights": "جميع الحقوق محفوظة"},
  "divs": {
   "food": {
-   "title": "الأغذية | شركة سهم الكرار",
+   "title": "توريد اللحوم والسكر والمواد الغذائية للشركات في الرياض | شركة سهم الكرار",
    "desc": "قطاع الأغذية في شركة سهم الكرار: توريد وتجارة اللحوم والسكر والمواد الغذائية الأساسية للشركات والمؤسسات في المملكة العربية السعودية.",
    "short": "توريد وتجارة المنتجات الغذائية بجودة موثوقة وسلاسل إمداد منضبطة.",
    "bullets": ["اللحوم والمنتجات الغذائية", "السكر والمواد الأساسية", "التوريد للشركات والمؤسسات"],
    "h1": "الأغذية",
+   "hook": "توريد غذائي بمواعيد ثابتة وجودة تثق بها.",
    "lead": "نورّد ونتاجر في المنتجات الغذائية الأساسية للشركات والمؤسسات، بجودة موثوقة وسلاسل إمداد منضبطة.",
    "services_h": "ما نقدمه",
    "services": [("اللحوم", "لحوم الضأن والماعز والأبقار والدواجن للمطاعم والمنشآت والجهات."),
@@ -78,11 +80,12 @@ T = {
    "cta_h": "تحتاج توريد أغذية لجهتك؟", "cta_p": "أرسل لنا الأصناف والكميات والموعد، ونعود إليك بعرض.", "cta_btn": "اطلب عرض سعر",
    "subject": "طلب عرض سعر - قطاع الأغذية"},
   "technology": {
-   "title": "التقنية | شركة سهم الكرار",
+   "title": "حلول الذكاء الاصطناعي وتقنية المعلومات والأمن السيبراني في الرياض | شركة سهم الكرار",
    "desc": "قطاع التقنية في شركة سهم الكرار: الذكاء الاصطناعي وأتمتة الأعمال، تقنية المعلومات والشبكات، الأمن السيبراني، والاستشارات التقنية، مع نظام إدارة الاستقدام كمشروع سابق.",
    "short": "حلول الذكاء الاصطناعي وتقنية المعلومات والشبكات، مع استشارات تقنية للجهات والشركات.",
    "bullets": ["الذكاء الاصطناعي وأتمتة الأعمال", "تقنية المعلومات والشبكات", "الاستشارات التقنية"],
    "h1": "التقنية",
+   "hook": "أتمتة إجراءاتك دون استبدال أنظمتك.",
    "lead": "نبني حلولًا تقنية تخدم العمل مباشرة: ذكاء اصطناعي وأتمتة، وبنية تقنية وشبكات، وأنظمة مخصصة تُصمَّم حول طريقة عمل العميل.",
    "services_h": "ما نقدمه",
    "services": [("الذكاء الاصطناعي وأتمتة الأعمال", "أتمتة الإجراءات المتكررة وبناء حلول ذكية تختصر الوقت وتقلل الأخطاء."),
@@ -103,11 +106,12 @@ T = {
    "cta_h": "عندك فكرة أو نظام تحتاج بناءه؟", "cta_p": "أخبرنا عن الإجراء الذي تريد تبسيطه، ونقترح عليك الحل.", "cta_btn": "ناقش مشروعك",
    "subject": "استفسار - قطاع التقنية"},
   "contracting": {
-   "title": "المقاولات | شركة سهم الكرار",
+   "title": "المقاولات العامة وإدارة المشاريع والصيانة في الرياض | شركة سهم الكرار",
    "desc": "قطاع المقاولات في شركة سهم الكرار: مقاولات عامة وإدارة وتنفيذ المشاريع والصيانة والتشغيل بمعايير جودة وسلامة والتزام بالجداول الزمنية في المملكة العربية السعودية.",
    "short": "تنفيذ وإدارة المشاريع بمعايير جودة وسلامة والتزام بالجداول الزمنية.",
    "bullets": ["المقاولات العامة", "إدارة وتنفيذ المشاريع", "الصيانة والتشغيل"],
    "h1": "المقاولات",
+   "hook": "مشروعك في موعده، بتكلفة وجودة وسلامة واضحة.",
    "lead": "ننفّذ ونُدير المشاريع بمعايير جودة وسلامة واضحة، وبجدول زمني يعرفه العميل من اليوم الأول.",
    "services_h": "ما نقدمه",
    "services": [("المقاولات العامة", "تنفيذ أعمال المقاولات للمنشآت والمشاريع التجارية والخاصة."),
@@ -119,12 +123,12 @@ T = {
  },
  "privacy": {
   "title": "سياسة الخصوصية | شركة سهم الكرار",
-  "desc": "كيف تتعامل شركة سهم الكرار مع البيانات التي تصلها عبر البريد الإلكتروني وموقعها.",
+  "desc": "سياسة الخصوصية لشركة سهم الكرار: كيف نتعامل مع البيانات التي تصلنا عبر البريد الإلكتروني والهاتف ونموذج التواصل في موقعنا، وما الذي لا نجمعه، وكيف تمارس حقوقك.",
   "h1": "سياسة الخصوصية",
   "effective": "تاريخ السريان: أكتوبر 2026",
   "body": [
    ("1. من نحن", "تُشغّل شركة سهم الكرار (الرياض، المملكة العربية السعودية) هذا الموقع والخدمات المرتبطة به. وتشير عبارات «شركة سهم الكرار» و«نحن» إلى هذه الجهة."),
-   ("2. المعلومات التي نجمعها", "لا يجمع هذا الموقع بيانات شخصية من الزوار تلقائيًا، ولا يستخدم ملفات تعريف الارتباط. إذا راسلتنا عبر البريد الإلكتروني أو الهاتف، فإننا نستلم الاسم وجهة العمل وبيانات التواصل ومضمون استفسارك."),
+   ("2. المعلومات التي نجمعها", "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات تحليل أو تتبع إعلاني، وتُقدَّم الخطوط والملفات من خادمنا نفسه لا من أطراف ثالثة. ومثل أي موقع، يسجّل مزوّد الاستضافة بيانات تقنية معتادة (مثل عنوان الشبكة والتاريخ والوقت والصفحة المطلوبة) لأغراض الأمان والتشغيل. وإذا راسلتنا عبر البريد الإلكتروني أو الهاتف أو النموذج، فإننا نستلم الاسم وجهة العمل وبيانات التواصل ومضمون استفسارك."),
    ("3. كيف نستخدم معلوماتك", "نستخدم المعلومات التي تصلنا للرد على استفسارك وتقييم فرص التعاون وحفظ سجل المراسلات المؤسسية. ولا نبيع بياناتك الشخصية ولا نؤجرها ولا نشاركها مع أطراف ثالثة لأغراض تسويقية."),
    ("4. مكان معالجة البيانات", "تُعالج البيانات التي تصلنا عبر هذا الموقع وفق متطلبات نظام حماية البيانات الشخصية (PDPL) وإرشادات الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا) المعمول بها."),
    ("5. حقوقك", "يحق لك طلب الاطلاع على بياناتك الشخصية أو تصحيحها أو حذفها أو تقييد معالجتها وفق الأنظمة المعمول بها. لممارسة هذه الحقوق تواصل معنا على " + EMAIL + "."),
@@ -133,7 +137,6 @@ T = {
 },
 "en": {
  "dir": "ltr", "lang": "en", "base": "/en/", "other": "ar", "other_label": "العربية", "other_short": "عربي",
- "fonts": "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap",
  "brand": "Sahm Alkarar Company", "locale": "en_US", "other_locale": "ar_SA",
  "skip": "Skip to content",
  "nav": {"about": "About", "divisions": "Divisions", "contact": "Contact"},
@@ -141,15 +144,15 @@ T = {
  "div_names": {"food": "Food", "technology": "Technology", "contracting": "Contracting"},
  "home": {
   "title": "Sahm Alkarar Company | Food, Technology and Contracting in Saudi Arabia",
-  "desc": "Sahm Alkarar Company is a Saudi group based in Riyadh working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
+  "desc": "Sahm Alkarar Company is a Saudi company based in Riyadh working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
   "eyebrow": "Riyadh · Saudi Arabia",
   "h1": "Boldness that hits the mark.",
-  "lead": "A Saudi group working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
+  "lead": "A Saudi company working in food, technology and contracting. We start with conviction, deliver with precision, and keep what we promise.",
   "cta1": "Contact us", "cta2": "Our divisions",
   "logo_alt": "Sahm Alkarar logo",
   "about_eyebrow": "About",
   "about_h": "A name that carries the meaning of courage",
-  "about_p": "Al-Karrar is the one who charges the objective and does not turn back; the arrow is precision in hitting it. From those two ideas came the name and the mark: a falcon, an arrow and a shield, standing for steady direction, strong protection and fast execution.",
+  "about_p": "Al-Karrar is the one who charges the objective and does not turn back; the arrow is precision in hitting it. From those two ideas came the name and the mark.",
   "principles": [("Conviction", "We choose our direction carefully, then hold it until the result."),
                  ("Precision", "Measured quality at every stage, from sourcing to handover."),
                  ("Commitment", "Clear dates and measurable promises for every client and partner.")],
@@ -164,11 +167,12 @@ T = {
             "rights": "All rights reserved"},
  "divs": {
   "food": {
-   "title": "Food | Sahm Alkarar Company",
+   "title": "Meat, Sugar and Food Supply for Businesses in Riyadh | Sahm Alkarar Company",
    "desc": "Sahm Alkarar Company's food division: sourcing and trading of meat, sugar and staple food products for companies and institutions in Saudi Arabia.",
    "short": "Sourcing and trading of food products with reliable quality and disciplined supply chains.",
    "bullets": ["Meat and food products", "Sugar and staple goods", "Supply to companies and institutions"],
    "h1": "Food",
+   "hook": "Food supply on fixed dates, at a quality you can trust.",
    "lead": "We source and trade staple food products for companies and institutions, with reliable quality and a disciplined supply chain.",
    "services_h": "What we offer",
    "services": [("Meat", "Lamb, goat, beef and poultry for restaurants, facilities and institutions."),
@@ -178,11 +182,12 @@ T = {
    "cta_h": "Need food supply for your organization?", "cta_p": "Send us the items, quantities and date, and we will come back with a quotation.", "cta_btn": "Request a quotation",
    "subject": "Quotation request - Food division"},
   "technology": {
-   "title": "Technology | Sahm Alkarar Company",
+   "title": "AI, IT and Cybersecurity Solutions in Riyadh | Sahm Alkarar Company",
    "desc": "Sahm Alkarar Company's technology division: AI and business automation, IT and networking, cybersecurity and technology consulting, with a recruitment management system as previous work.",
    "short": "AI, IT and networking solutions, with technology consulting for organizations and companies.",
    "bullets": ["AI and business automation", "IT and networking", "Technology consulting"],
    "h1": "Technology",
+   "hook": "Automate a process without replacing your systems.",
    "lead": "We build technology that serves the work directly: AI and automation, infrastructure and networks, and custom systems designed around how the client operates.",
    "services_h": "What we offer",
    "services": [("AI and business automation", "Automating repetitive processes and building smart tools that save time and reduce errors."),
@@ -203,11 +208,12 @@ T = {
    "cta_h": "Have an idea or a system you need built?", "cta_p": "Tell us which process you want to simplify and we will propose the solution.", "cta_btn": "Discuss your project",
    "subject": "Inquiry - Technology division"},
   "contracting": {
-   "title": "Contracting | Sahm Alkarar Company",
+   "title": "General Contracting, Project Management and Maintenance in Riyadh | Sahm Alkarar Company",
    "desc": "Sahm Alkarar Company's contracting division: general contracting, project management and execution, and maintenance and operations to clear quality and safety standards in Saudi Arabia.",
    "short": "Delivery and management of projects to quality and safety standards, on schedule.",
    "bullets": ["General contracting", "Project management and execution", "Maintenance and operations"],
    "h1": "Contracting",
+   "hook": "Your project on time, with cost, quality and safety made clear.",
    "lead": "We deliver and manage projects to clear quality and safety standards, on a schedule the client knows from day one.",
    "services_h": "What we offer",
    "services": [("General contracting", "Construction works for facilities and for commercial and private projects."),
@@ -219,12 +225,12 @@ T = {
  },
  "privacy": {
   "title": "Privacy policy | Sahm Alkarar Company",
-  "desc": "How Sahm Alkarar Company handles the data it receives by email and through this website.",
+  "desc": "Privacy policy of Sahm Alkarar Company: how we handle data received by email, phone and the contact form on this website, what we do not collect, and how to exercise your rights.",
   "h1": "Privacy policy",
   "effective": "Effective date: October 2026",
   "body": [
    ("1. Who we are", "Sahm Alkarar Company (Riyadh, Kingdom of Saudi Arabia) operates this website and related services. References to \"Sahm Alkarar Company\", \"we\" or \"our\" refer to this entity."),
-   ("2. Information we collect", "This website does not collect personal data from visitors automatically and does not use cookies. If you contact us by email or phone, we receive your name, organization, contact details and the content of your inquiry."),
+   ("2. Information we collect", "This website does not use cookies, analytics or advertising trackers, and its fonts and files are served from our own server, not from third parties. Like most websites, our hosting provider records standard technical logs (such as IP address, date and time, and the page requested) for security and operation. If you contact us by email, phone or the form, we receive your name, organization, contact details and the content of your inquiry."),
    ("3. How we use your information", "We use the information you send to respond to your inquiry, evaluate potential engagements and keep records of institutional communications. We do not sell, rent or share your personal data with third parties for marketing purposes."),
    ("4. Data residency", "Data received through this website is processed in accordance with the requirements of the Personal Data Protection Law (PDPL) and applicable SDAIA guidance."),
    ("5. Your rights", "You may have the right to access, correct, delete or restrict processing of your personal data under applicable law. To exercise these rights, contact us at " + EMAIL + "."),
@@ -293,11 +299,13 @@ WA_FLOAT = {"ar": "تواصل معنا عبر واتساب", "en": "Chat with us
 PROFILE = {"ar": {"label": "تحميل ملف الشركة (PDF)", "href": "/downloads/Sahm-Alkarar-Company-Profile-AR.pdf"},
            "en": {"label": "Download company profile (PDF)", "href": "/downloads/Sahm-Alkarar-Company-Profile-EN.pdf"}}
 FOUNDER = {
- "ar": {"eyebrow": "القيادة", "h": "المؤسس والرئيس التنفيذي", "name": "خالد عبد الرحمن", "role": "المؤسس والرئيس التنفيذي",
-        "p": ["خالد عبد الرحمن هو المؤسس والرئيس التنفيذي لشركة سهم الكرار، ويقود عملياتها في المملكة وشراكتها في الولايات المتحدة.",
+ "ar": {"eyebrow": "القيادة", "h": "المؤسس والرئيس التنفيذي", "name": "خالد عبدالرحمن", "role": "المؤسس والرئيس التنفيذي",
+        "lead": "يشرف مباشرة على قطاعات الأغذية والتقنية والمقاولات.",
+        "p": ["خالد عبدالرحمن هو المؤسس والرئيس التنفيذي لشركة سهم الكرار، ويقود عملياتها في المملكة وشراكتها في الولايات المتحدة.",
               "يتمتع بخبرة عقدين في بناء وتوسيع العمليات القائمة على التقنية في الأسواق المنظَّمة، وتمتد مسيرته بين تنفيذ برمجيات المؤسسات، والتحول الرقمي الحكومي، واستراتيجية التشغيل العابرة للحدود في الولايات المتحدة ودول الخليج."],
-        "alt": "خالد عبد الرحمن، المؤسس والرئيس التنفيذي لشركة سهم الكرار"},
+        "alt": "خالد عبدالرحمن، المؤسس والرئيس التنفيذي لشركة سهم الكرار"},
  "en": {"eyebrow": "Leadership", "h": "Founder and CEO", "name": "Khalid Abdelrahman", "role": "Founder and Chief Executive Officer",
+        "lead": "Directly oversees the Food, Technology and Contracting divisions.",
         "p": ["Khalid Abdelrahman is the Founder and CEO of Sahm Alkarar Company. He leads the company's operations in the Kingdom and its partnership in the United States.",
               "He brings two decades of experience building and scaling technology-driven operations across regulated markets. His career spans enterprise software delivery, government digital transformation, and cross-border operating strategy in the US and GCC."],
         "alt": "Khalid Abdelrahman, Founder and CEO of Sahm Alkarar Company"},
@@ -322,6 +330,7 @@ STORY = {
 }
 BAND = {"ar": ["ثبات", "دقة", "التزام"], "en": ["Conviction", "Precision", "Commitment"]}
 
+CLIENT_DIMS = {"baan": (424, 240), "almarai": (271, 171), "fakieh": (705, 398), "sawaed": (338, 146), "alayed": (272, 88), "hindaza": (511, 300), "adel": (310, 300)}
 CLIENTS = {
  "ar": {"eyebrow": "الثقة", "h": "عملاؤنا وتسجيلاتنا", "worked": "عملنا مع", "reg": "مسجّلون لدى",
         "baan": "بان القابضة، مجموعة الحكير", "almarai": "المراعي", "fakieh": "فقيه لمزارع الدواجن"},
@@ -335,24 +344,20 @@ TECH_CLIENTS = {
         "sawaed": "Sawaed Engineering", "alayed": "Al-Ayed Company for Recruitment", "hindaza": "Hindaza General Contracting Company", "adel": "Adel Training Center"},
 }
 TECHX = {
- "ar": {"cap_eyebrow": "الذكاء التطبيقي", "cap_h": "ذكاء يعمل داخل سير العمل",
+ "ar": {"cap_eyebrow": "الذكاء التطبيقي", "cap_h": "ذكاء يعمل داخل سير العمل", "cap_note": "تُنفَّذ حسب الطلب وبحسب إجراءات كل عميل.",
         "caps": [("أتمتة سير العمل", "أتمتة الإجراءات الداخلية كثيرة الحجم من الاستلام حتى الاعتماد، مع إمكانية التدخل البشري."),
                  ("ذكاء الصوت والخدمة", "ذكاء صوتي ومساعدو موظفي الخدمة بالعربية والإنجليزية، مع التصعيد إلى الموظف عند الحاجة."),
-                 ("عمليات الامتثال والمخاطر", "معالجة حالات تتبع قواعد السياسات وتترك سجل تدقيق واضحًا."),
                  ("ذكاء المستندات والمعرفة", "بحث واستخراج خاص مع تتبع المصدر عبر مستندات ضخمة بالعربية والإنجليزية."),
-                 ("ذكاء الميدان والأصول", "رؤية واضحة للأصول وفرق الميدان من الصور والمستشعرات وأوامر العمل."),
-                 ("منصات مخصصة ووكلاء خاصون", "منصات وبيئات وكلاء تُبنى لحاجتك وتعمل داخل بنيتك التقنية.")],
+],
         "how_h": "كيف نبني",
         "how": [("نشر يناسبك", "سحابي أو سحابة خاصة أو داخل منشأتك أو هجين، بحسب ما يتطلبه الأمن وطبيعة البيانات."),
                 ("تحكم بشري", "مراجعة بشرية ومسارات تصعيد وسجلات تدقيق في صلب كل نظام."),
-                ("معايير نصمّم عليها", "نصمّم بما يتوافق مع نظام حماية البيانات الشخصية وضوابط الهيئة الوطنية للأمن السيبراني وإرشادات سدايا.")]},
- "en": {"cap_eyebrow": "Applied AI", "cap_h": "Intelligence that works inside the workflow",
+                ("معايير نصمّم عليها", "نصمّم بما ينسجم مع نظام حماية البيانات الشخصية وضوابط الهيئة الوطنية للأمن السيبراني وإرشادات سدايا.")]},
+ "en": {"cap_eyebrow": "Applied AI", "cap_h": "Intelligence that works inside the workflow", "cap_note": "Delivered on request, scoped to each client's process.",
         "caps": [("Workflow automation", "Automating high-volume internal processes from intake to approval, with human override."),
                  ("Voice and service AI", "Arabic and English voice AI and agent copilots for service handling, with escalation to people."),
-                 ("Compliance and risk operations", "Case handling that follows policy rules and leaves a clear audit trail."),
                  ("Document and knowledge intelligence", "Private, source-traced search and extraction across large document estates, in Arabic and English."),
-                 ("Field and asset intelligence", "Clear visibility of assets and field teams from imagery, sensors and work orders."),
-                 ("Custom platforms and private agents", "Purpose-built platforms and agent environments that run inside your own infrastructure.")],
+],
         "how_h": "How we build",
         "how": [("Deployment that fits", "Cloud, private cloud, on-premises or hybrid, according to security and data needs."),
                 ("Human control", "Human review, escalation paths and audit logs built into every system."),
@@ -421,10 +426,7 @@ def head(lang, key, title, desc, extra_ld=None):
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{t["fonts"]}">
-<link rel="stylesheet" href="{CSS}">
+{PRELOAD[lang]}<link rel="stylesheet" href="{CSS}">
 <script>document.documentElement.classList.add("js")</script>
 {ld}</head>
 '''
@@ -462,7 +464,7 @@ def footer(lang):
       <li>{L["hq_val"]}</li></ul></div>
     <div><h2>{L["company_h"]}</h2><ul>
       <li>{L["cr"]}: <bdi>{CR}</bdi></li>
-      <li><a href="{b}#profiles">{PROFILES[lang]["foot"]}</a></li>
+      <li><a href="{b}#divisions">{PROFILES[lang]["foot"]}</a></li>
       <li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
     <p class="fine">© 2026 {esc(t["brand"])}. {L["rights"]}.</p>
   </div>
@@ -555,7 +557,7 @@ def founder_html(lang):
     F = FOUNDER[lang]; paras = "".join(f"<p>{esc(x)}</p>" for x in F["p"])
     return f'''<section id="founder"><div class="wrap founder">
   <figure class="ph"><img src="/assets/img/founder.webp" alt="{esc(F["alt"])}" width="720" height="900" loading="lazy"></figure>
-  <div class="stack g20"><p class="eyebrow">{F["eyebrow"]}</p><h2>{F["name"]}</h2><p class="role">{F["role"]}</p><div class="bio stack g16 muted">{paras}</div></div>
+  <div class="stack g20"><p class="eyebrow">{F["eyebrow"]}</p><h2>{F["name"]}</h2><p class="role">{F["role"]}</p><p class="lead-line">{F["lead"]}</p><div class="bio stack g16 muted">{paras}</div></div>
 </div></section>
 '''
 
@@ -573,14 +575,14 @@ def serve_html(lang, d):
 
 def clients_html(lang):
     C = CLIENTS[lang]
-    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
+    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" width="{CLIENT_DIMS[k][0]}" height="{CLIENT_DIMS[k][1]}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
     return f'''<section id="clients"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{C["eyebrow"]}</p><h2>{C["h"]}</h2></div>
   <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("baan")}</div></div><div class="lg"><h3>{C["reg"]}</h3><div class="logos">{fig("almarai")}{fig("fakieh")}</div></div></div></div></section>
 '''
 
 def tech_clients_html(lang):
     C = TECH_CLIENTS[lang]
-    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
+    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" width="{CLIENT_DIMS[k][0]}" height="{CLIENT_DIMS[k][1]}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
     return f'''<section id="clients" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{C["eyebrow"]}</p><h2>{C["h"]}</h2></div>
   <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("alayed")}{fig("hindaza")}{fig("sawaed")}{fig("adel")}</div></div></div></div></section>
 '''
@@ -589,7 +591,7 @@ def techx_html(lang):
     X = TECHX[lang]
     caps = "".join(f'<div class="card"><h3 style="font-size:22px">{esc(a)}</h3><p style="margin-top:10px">{esc(c)}</p></div>' for a, c in X["caps"])
     how = "".join(f'<li><span class="n" aria-hidden="true">0{i+1}</span><div><h3>{esc(a)}</h3><p>{esc(c)}</p></div></li>' for i, (a, c) in enumerate(X["how"]))
-    return f'''<section id="capabilities" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{X["cap_eyebrow"]}</p><h2>{X["cap_h"]}</h2></div><div class="cards cards-technology">{caps}</div>
+    return f'''<section id="capabilities" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{X["cap_eyebrow"]}</p><h2>{X["cap_h"]}</h2><p class="muted">{X["cap_note"]}</p></div><div class="cards cards-ai">{caps}</div>
   <div class="stack g28"><h2 style="font-size:clamp(22px,3vw,30px)">{X["how_h"]}</h2><ol class="steps">{how}</ol></div></div></section>
 '''
 
@@ -600,13 +602,25 @@ def profiles_html(lang):
   <div class="cards">{cards}</div><p><a class="more" href="{PROFILE[lang]["href"]}" download>{P["overview"]}</a></p></div></section>
 '''
 
+def name_html(lang):
+    t = T[lang]; h = t["home"]; S = STORY[lang]
+    items = "".join(f'<li data-k="{k}"><span class="n" aria-hidden="true">0{i+1}</span><h3>{a}</h3><p>{c}</p></li>' for i, (k, a, c) in enumerate(S["items"]))
+    return f'''<section id="about" class="story alt"><div class="wrap cols" style="align-items:center">
+  <div class="mark-crop" aria-hidden="true"><img src="/assets/img/mark.png" alt="" width="447" height="468" loading="lazy"></div>
+  <div class="stack g28"><div class="stack g20"><p class="eyebrow">{h["about_eyebrow"]}</p><h2>{h["about_h"]}</h2><p class="muted">{h["about_p"]}</p></div><ol class="story-list">{items}</ol>
+  <div class="btns"><a class="btn" href="{PROFILE[lang]["href"]}" download>{PROFILE[lang]["label"]}</a></div></div>
+</div></section>
+'''
+
 def home(lang):
     t = T[lang]; h = t["home"]; b = t["base"]
     cards = ""
     for d in DIVS:
         dv = t["divs"][d]
         lis = "".join(f"<li>{esc(x)}</li>" for x in dv["bullets"])
-        cards += f'''<a class="card link" href="{path_for(lang, d)}">{ICONS[d]}<h3>{t["div_names"][d]}</h3><p>{esc(dv["short"])}</p><ul>{lis}</ul><span class="more">{h["more"]} {'←' if lang == 'ar' else '→'}</span></a>
+        P = PROFILES[lang]
+        pdf = f'<a class="pdf" href="{P["file"][d]}" download>{P["dl"][d]}</a>' if d in P["file"] else ""
+        cards += f'''<div class="card link">{ICONS[d]}<h3>{t["div_names"][d]}</h3><p>{esc(dv["short"])}</p><ul>{lis}</ul><div class="foot"><a class="more stretch" href="{path_for(lang, d)}">{h["more"]} {'←' if lang == 'ar' else '→'}</a>{pdf}</div></div>
 '''
     princ = "".join(f'<div class="principle"><h3>{a}</h3><p>{c}</p></div>' for a, c in h["principles"])
     logo = "/assets/img/logo-ar.png" if lang == "ar" else "/assets/img/logo-en.png"
@@ -623,21 +637,15 @@ def home(lang):
     <div class="hero-art"><div class="emb"><img src="{logo}" alt="{h["logo_alt"]}" width="440" height="{ '486' if lang == 'ar' else '397'}" fetchpriority="high"><span class="sheen" style="--m:url({logo})" aria-hidden="true"></span></div></div>
   </div>
 </section>
-<section id="about" class="alt">
-  <div class="wrap cols">
-    <div class="stack g20"><p class="eyebrow">{h["about_eyebrow"]}</p><h2>{h["about_h"]}</h2><p class="muted">{h["about_p"]}</p><div class="btns"><a class="btn" href="#profiles">{PROFILES[lang]["eyebrow"]}</a></div></div>
-    <div>{princ}</div>
-  </div>
-</section>
-{band_html(lang)}{story_html(lang)}<section id="divisions">
+{name_html(lang)}<section id="divisions">
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{h["div_eyebrow"]}</p><h2>{h["div_h"]}</h2></div>
     <div class="cards">{cards}</div>
   </div>
 </section>
-{profiles_html(lang)}<section id="product">
+<section id="product">
   <div class="wrap">
-    <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1400" height="440" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
+    <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup-dark.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1240" height="352" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
   </div>
 </section>
 {founder_html(lang)}<section id="contact" class="alt">
@@ -662,7 +670,7 @@ def division(lang, d):
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{dv["work_eyebrow"]}</p><h2>{dv["work_h"]}</h2></div>
     <article class="work">
-      <div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{esc(dv["prod_alt"])}" width="1400" height="440" loading="lazy"><div class="prod-side"><span class="tag">{dv["work_tag"]}</span><a class="btn gold" href="{dv["prod_url"]}" target="_blank" rel="noopener">{dv["prod_visit"]}</a></div></div>
+      <div class="prod"><img src="/assets/img/istiqdam360-lockup-dark.svg" alt="{esc(dv["prod_alt"])}" width="1240" height="352" loading="lazy"><div class="prod-side"><span class="tag">{dv["work_tag"]}</span><a class="btn gold" href="{dv["prod_url"]}" target="_blank" rel="noopener">{dv["prod_visit"]}</a></div></div>
       <div class="info"><div class="head"><h3 style="font-size:30px">{dv["work_name"]}</h3><p class="muted">{dv["work_p"]}</p></div><div class="feat">{feats}</div></div>
       <div class="shot">
         <ul class="shots">
@@ -684,6 +692,7 @@ def division(lang, d):
     <div class="stack g28">
     <nav class="crumbs" aria-label="{'مسار التصفح' if lang == 'ar' else 'Breadcrumb'}"><a href="{b}">{t["home_label"]}</a><span aria-hidden="true">/</span><a href="{b}#divisions">{t["nav"]["divisions"]}</a><span aria-hidden="true">/</span><span aria-current="page">{t["div_names"][d]}</span></nav>
     <h1>{dv["h1"]}</h1>
+    <p class="hook">{dv["hook"]}</p>
     <p class="lead">{dv["lead"]}</p>
     </div>
     <div class="div-logo"><img src="/assets/img/div-{d}-{lang}.webp" alt="{'سهم الكرار - ' if lang == 'ar' else 'Sahm Alkarar - '}{t["div_names"][d]}" width="640" height="640" fetchpriority="high"></div>
@@ -726,7 +735,7 @@ def notfound():
 <html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>الصفحة غير موجودة | Page not found</title><meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&family=IBM+Plex+Sans+Arabic:wght@300;400&display=swap">
+<link rel="preload" href="/assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{CSS}"></head>
 <body><main id="main" style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px">
 <div class="stack g20" style="align-items:center"><img src="/assets/img/mark.png" alt="" width="84" height="88">
@@ -765,7 +774,7 @@ if __name__ == "__main__":
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; base-uri 'self'; form-action 'self' mailto: https://formspree.io https://api.web3forms.com; connect-src 'self' https://formspree.io https://api.web3forms.com; frame-ancestors 'none'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; base-uri 'self'; form-action 'self' mailto: https://formspree.io https://api.web3forms.com; connect-src 'self' https://formspree.io https://api.web3forms.com; frame-ancestors 'none'; object-src 'none'
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 """)

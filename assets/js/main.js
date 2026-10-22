@@ -9,7 +9,7 @@
 
   // Scroll reveal: elements fade up once as they approach the viewport.
   // Anything already above the viewport (anchor jump, reload mid-page, fast scroll) is shown at once.
-  if (reduce || !('IntersectionObserver' in window)) { root.classList.remove('js'); return; }
+  if (reduce || !('IntersectionObserver' in window)) { return; } // nothing is hidden without the .rv class, so .js stays (it also drives the mobile menu)
   var sel = '.hero .wrap > div > *, .hero-art, .page-hero .wrap > *, section .wrap > .stack, section .wrap > h2,' +
             ' .card, .principle, .rows > div, .work, .cta .wrap > *, section .wrap > .btns, .prose > *';
   var els = d.querySelectorAll(sel);

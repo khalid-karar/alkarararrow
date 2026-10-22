@@ -636,7 +636,7 @@ def home(lang):
     <div class="cards">{cards}</div>
   </div>
 </section>
-{clients_html(lang)}{profiles_html(lang)}<section id="product">
+{profiles_html(lang)}<section id="product">
   <div class="wrap">
     <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1400" height="440" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
   </div>

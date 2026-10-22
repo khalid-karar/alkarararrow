@@ -328,6 +328,12 @@ CLIENTS = {
  "en": {"eyebrow": "Trust", "h": "Clients and registrations", "worked": "Worked with", "reg": "Registered with",
         "baan": "Baan Holdings, Alhokair Group", "almarai": "Almarai", "fakieh": "Fakieh Poultry Farms"},
 }
+TECH_CLIENTS = {
+ "ar": {"eyebrow": "الثقة", "h": "عملاؤنا في قطاع التقنية", "worked": "عملنا مع",
+        "sawaed": "Sawaed Engineering", "alayed": "شركة العايد للاستقدام", "hindaza": "Hindaza General Contracting Company", "adel": "مركز عدل للتدريب"},
+ "en": {"eyebrow": "Trust", "h": "Our Technology clients", "worked": "Worked with",
+        "sawaed": "Sawaed Engineering", "alayed": "Al-Ayed Company for Recruitment", "hindaza": "Hindaza General Contracting Company", "adel": "Adel Training Center"},
+}
 TECHX = {
  "ar": {"cap_eyebrow": "الذكاء التطبيقي", "cap_h": "ذكاء يعمل داخل سير العمل",
         "caps": [("أتمتة سير العمل", "أتمتة الإجراءات الداخلية كثيرة الحجم من الاستلام حتى الاعتماد، مع إمكانية التدخل البشري."),
@@ -573,6 +579,13 @@ def clients_html(lang):
   <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("baan")}</div></div><div class="lg"><h3>{C["reg"]}</h3><div class="logos">{fig("almarai")}{fig("fakieh")}</div></div></div></div></section>
 '''
 
+def tech_clients_html(lang):
+    C = TECH_CLIENTS[lang]
+    def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
+    return f'''<section id="clients" class="alt"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{C["eyebrow"]}</p><h2>{C["h"]}</h2></div>
+  <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("alayed")}{fig("hindaza")}{fig("sawaed")}{fig("adel")}</div></div></div></div></section>
+'''
+
 def techx_html(lang):
     X = TECHX[lang]
     caps = "".join(f'<div class="card"><h3 style="font-size:22px">{esc(a)}</h3><p style="margin-top:10px">{esc(c)}</p></div>' for a, c in X["caps"])
@@ -683,7 +696,7 @@ def division(lang, d):
     <div class="cards cards-{d}">{cards}</div>
   </div>
 </section>
-{techx_html(lang) if d == "technology" else ""}{work}{clients_html(lang) if d == "food" else ""}{proof_html(lang, d) if d == "contracting" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
+{techx_html(lang) if d == "technology" else ""}{work}{tech_clients_html(lang) if d == "technology" else ""}{clients_html(lang) if d == "food" else ""}{proof_html(lang, d) if d == "contracting" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
   <div class="wrap cols">
     <div class="stack g28"><div class="stack g12"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
       <div class="btns">{prof_btn(lang, d, False) if d == "technology" else ""}<a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>

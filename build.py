@@ -463,7 +463,6 @@ def footer(lang):
     <div><h2>{L["company_h"]}</h2><ul>
       <li>{L["cr"]}: <bdi>{CR}</bdi></li>
       <li><a href="{b}#profiles">{PROFILES[lang]["foot"]}</a></li>
-      <li><a href="{PRODUCT_URL[lang]}" target="_blank" rel="noopener">{PRODUCT_NAME[lang]}</a></li>
       <li><a href="{path_for(lang, "privacy")}">{L["privacy"]}</a></li></ul></div>
     <p class="fine">© 2026 {esc(t["brand"])}. {L["rights"]}.</p>
   </div>

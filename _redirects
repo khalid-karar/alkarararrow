@@ -1,3 +1,9 @@
 # Send the default Netlify address to the real domain (permanent redirect, keeps the path)
 https://sahmalkarar.netlify.app/*  https://sahmalkarar.sa/:splat  301!
 http://sahmalkarar.netlify.app/*   https://sahmalkarar.sa/:splat  301!
+
+# Send the .com (and www.) to the .sa
+https://sahmalkarar.com/*          https://sahmalkarar.sa/:splat  301!
+http://sahmalkarar.com/*           https://sahmalkarar.sa/:splat  301!
+https://www.sahmalkarar.com/*      https://sahmalkarar.sa/:splat  301!
+http://www.sahmalkarar.com/*       https://sahmalkarar.sa/:splat  301!

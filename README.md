@@ -17,4 +17,4 @@ and commit the regenerated HTML. No dependencies.
 
 ## Hosting
 Any static host. The pages use root-relative paths (`/assets/...`), so serve from a domain root
-(e.g. alkarararrow.com), not a sub-folder.
+(e.g. sahmalkarar.sa), not a sub-folder.

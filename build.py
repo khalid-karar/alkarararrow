@@ -19,8 +19,18 @@ CR = "7050745707"
 # Formspree:  FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx"   (FORM_ACCESS_KEY stays empty)
 # Web3Forms:  FORM_ENDPOINT = "https://api.web3forms.com/submit"  and  FORM_ACCESS_KEY = "<your access key>"
 # Then run build.py and commit. The Content-Security-Policy in _headers already allows both services.
-FORM_ENDPOINT = ""
+FORM_ENDPOINT = "https://api.web3forms.com/submit"
+# One Web3Forms access key per page. Each key can only deliver to the recipient set on it in the Web3Forms dashboard.
+# Free plan allows 2 recipients: info@ and technology@. Food and Contracting keys deliver to info@ for now;
+# the subject line names the division. When the plan is upgraded, change their recipients to food@ / contracting@.
+FORM_KEYS = {
+ "home": "843ee7ab-d506-48fc-a351-fb3d3ba869f9",         # -> info@sahmalkarar.sa
+ "technology": "ec6e4716-0cee-481a-a332-17232c3853b9",   # -> technology@sahmalkarar.sa
+ "food": "54d5d1e6-788d-47ad-ad90-5889e449d232",         # -> info@sahmalkarar.sa (for now)
+ "contracting": "9719cf67-72d2-46e1-a6d7-01d7691a50a5",  # -> info@sahmalkarar.sa (for now)
+}
 FORM_ACCESS_KEY = ""
+PRIVACY_EMAIL = "privacy@sahmalkarar.sa"
 _P = lambda f: f'<link rel="preload" href="/assets/fonts/{f}-normal.woff2" as="font" type="font/woff2" crossorigin>\n'
 PRELOAD = {"ar": _P("ibm-plex-sans-arabic-arabic-400") + _P("reem-kufi-arabic-700"), "en": _P("ibm-plex-sans-latin-400") + _P("ibm-plex-sans-latin-600")}
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -131,8 +141,8 @@ T = {
    ("2. المعلومات التي نجمعها", "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات تحليل أو تتبع إعلاني، وتُقدَّم الخطوط والملفات من خادمنا نفسه لا من أطراف ثالثة. ومثل أي موقع، يسجّل مزوّد الاستضافة بيانات تقنية معتادة (مثل عنوان الشبكة والتاريخ والوقت والصفحة المطلوبة) لأغراض الأمان والتشغيل. وإذا راسلتنا عبر البريد الإلكتروني أو الهاتف أو النموذج، فإننا نستلم الاسم وجهة العمل وبيانات التواصل ومضمون استفسارك."),
    ("3. كيف نستخدم معلوماتك", "نستخدم المعلومات التي تصلنا للرد على استفسارك وتقييم فرص التعاون وحفظ سجل المراسلات المؤسسية. ولا نبيع بياناتك الشخصية ولا نؤجرها ولا نشاركها مع أطراف ثالثة لأغراض تسويقية."),
    ("4. مكان معالجة البيانات", "تُعالج البيانات التي تصلنا عبر هذا الموقع وفق متطلبات نظام حماية البيانات الشخصية (PDPL) وإرشادات الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا) المعمول بها."),
-   ("5. حقوقك", "يحق لك طلب الاطلاع على بياناتك الشخصية أو تصحيحها أو حذفها أو تقييد معالجتها وفق الأنظمة المعمول بها. لممارسة هذه الحقوق تواصل معنا على " + EMAIL + "."),
-   ("6. التواصل", "لأي استفسار عن الخصوصية راسلنا على " + EMAIL + "."),
+   ("5. حقوقك", "يحق لك طلب الاطلاع على بياناتك الشخصية أو تصحيحها أو حذفها أو تقييد معالجتها وفق الأنظمة المعمول بها. لممارسة هذه الحقوق تواصل معنا على " + PRIVACY_EMAIL + "."),
+   ("6. التواصل", "لأي استفسار عن الخصوصية راسلنا على " + PRIVACY_EMAIL + "."),
   ]},
 },
 "en": {
@@ -233,8 +243,8 @@ T = {
    ("2. Information we collect", "This website does not use cookies, analytics or advertising trackers, and its fonts and files are served from our own server, not from third parties. Like most websites, our hosting provider records standard technical logs (such as IP address, date and time, and the page requested) for security and operation. If you contact us by email, phone or the form, we receive your name, organization, contact details and the content of your inquiry."),
    ("3. How we use your information", "We use the information you send to respond to your inquiry, evaluate potential engagements and keep records of institutional communications. We do not sell, rent or share your personal data with third parties for marketing purposes."),
    ("4. Data residency", "Data received through this website is processed in accordance with the requirements of the Personal Data Protection Law (PDPL) and applicable SDAIA guidance."),
-   ("5. Your rights", "You may have the right to access, correct, delete or restrict processing of your personal data under applicable law. To exercise these rights, contact us at " + EMAIL + "."),
-   ("6. Contact", "For privacy inquiries, contact " + EMAIL + "."),
+   ("5. Your rights", "You may have the right to access, correct, delete or restrict processing of your personal data under applicable law. To exercise these rights, contact us at " + PRIVACY_EMAIL + "."),
+   ("6. Contact", "For privacy inquiries, contact " + PRIVACY_EMAIL + "."),
   ]},
 },
 }
@@ -507,7 +517,7 @@ def form_html(lang, d=None):
     opts += f'<option value=""{"" if d else " selected"}>{f["other"]}</option>' if not d else f'<option value="">{f["other"]}</option>'
     uid = "f-" + (d or "home")
     action = FORM_ENDPOINT or f"mailto:{EMAIL}"
-    return f'''<form class="form" id="{uid}" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-key="{FORM_ACCESS_KEY}" data-subject="{esc(f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
+    return f'''<form class="form" id="{uid}" method="post" action="{action}" data-endpoint="{FORM_ENDPOINT}" data-key="{FORM_KEYS.get(d or "home", FORM_ACCESS_KEY)}" data-subject="{esc(t["divs"][d]["subject"] if d else f["subject"])}" data-ok="{esc(f["ok"])}" data-err="{esc(f["err"])}" data-sending="{esc(f["sending"])}" data-req="{esc(f["req"])}" novalidate>
   <h3>{f["h"]}</h3>
   <div class="fields">
     <label for="{uid}-name">{f["name"]}<input id="{uid}-name" name="name" type="text" autocomplete="name" required></label>

@@ -373,7 +373,6 @@ html[lang="ar"] .lg h3{letter-spacing:.04em;text-transform:none;font-size:16px!i
 .logos{display:flex;flex-wrap:wrap;gap:20px}
 .logos figure{margin:0;display:flex;flex-direction:column;gap:10px}
 .plate{background:#fff;height:112px;min-width:200px;padding:16px 24px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-3);box-shadow:0 14px 34px rgba(0,0,0,.45)}
-.plate.txt span{color:#0B0B0D;font-weight:600;font-size:22px;letter-spacing:.02em}
 .plate img{max-height:76px;max-width:170px;width:auto;height:auto;display:block}
 .logos figcaption{font-size:14px;color:var(--dim);max-width:200px}
 

@@ -275,11 +275,11 @@ HOW = {
 }
 FAQ = {
  "ar": {"h": "أسئلة شائعة",
-  "food": [("مع من عملتم؟", "عملنا مع شركة بان القابضة، إحدى شركات مجموعة الحكير، ونحن مسجّلون لدى المراعي وفقيه لمزارع الدواجن والوطنية."), ("ما الذي أحتاجه لطلب عرض سعر؟", "أرسل لنا الأصناف والكميات وموعد التوريد المطلوب، ونعود إليك بعرض."), ("ما أنواع اللحوم المتوفرة؟", "نورّد لحوم الضأن والماعز والأبقار والدواجن.")],
+  "food": [("مع من عملتم؟", "عملنا مع شركة بان القابضة، إحدى شركات مجموعة الحكير، ونحن مسجّلون لدى المراعي وفقيه لمزارع الدواجن ودواجن الوطنية."), ("ما الذي أحتاجه لطلب عرض سعر؟", "أرسل لنا الأصناف والكميات وموعد التوريد المطلوب، ونعود إليك بعرض."), ("ما أنواع اللحوم المتوفرة؟", "نورّد لحوم الضأن والماعز والأبقار والدواجن.")],
   "technology": [("هل يمكن نشر النظام على خوادمنا؟", "نعم، يمكن نشر الأنظمة التي نبنيها داخل بيئتك لتبقى بياناتك عندك."), ("هل تبنون أنظمة من الصفر؟", "نعم، نبني الأنظمة حسب إجراءات العميل بدل تطويعه لنظام جاهز."), ("هل يظهر النظام بهوية شركتنا؟", "نعم، يقبل النظام شعار شركتك وألوانها ليظهر باسمك.")],
   "contracting": [("ما المعلومات اللازمة لعرض السعر؟", "نطاق العمل والموقع والموعد المطلوب، وأي مخططات أو متطلبات متوفرة."), ("هل تقدمون الصيانة بعد التسليم؟", "نعم، نقدّم عقود صيانة وتشغيل تبقي المنشأة جاهزة للعمل."), ("كيف تتعاملون مع السلامة والجودة؟", "نلتزم بإجراءات السلامة والجودة في كل موقع ونتابعها خلال التنفيذ.")]},
  "en": {"h": "Frequently asked questions",
-  "food": [("Who have you worked with?", "We have worked with Baan Holdings, part of the Alhokair Group, and we are registered with Almarai, Fakieh Poultry Farms and Watania."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
+  "food": [("Who have you worked with?", "We have worked with Baan Holdings, part of the Alhokair Group, and we are registered with Almarai, Fakieh Poultry Farms and Watania Poultry."), ("What do I need to request a quotation?", "Send us the items, quantities and the delivery date, and we will come back with a quotation."), ("Which meats do you supply?", "We supply lamb, goat, beef and poultry.")],
   "technology": [("Can the system be deployed on our own servers?", "Yes, the systems we build can be deployed inside your environment so your data stays with you."), ("Do you build systems from scratch?", "Yes. We build around the client's procedures instead of bending the client to an off-the-shelf product."), ("Can the system carry our branding?", "Yes. It takes your company's logo and colors so it appears under your name.")],
   "contracting": [("What do you need for a quotation?", "The scope of work, the site and the required date, plus any drawings or requirements you have."), ("Do you provide maintenance after handover?", "Yes, we offer maintenance and operating contracts that keep a facility ready for use."), ("How do you handle safety and quality?", "We follow safety and quality procedures on every site and track them during execution.")]},
 }
@@ -336,12 +336,12 @@ STORY = {
 }
 BAND = {"ar": ["ثبات", "دقة", "التزام"], "en": ["Conviction", "Precision", "Commitment"]}
 
-CLIENT_DIMS = {"baan": (424, 240), "almarai": (271, 171), "fakieh": (705, 398), "sawaed": (338, 146), "alayed": (272, 88), "hindaza": (511, 300), "adel": (310, 300)}
+CLIENT_DIMS = {"baan": (424, 240), "almarai": (271, 171), "fakieh": (705, 398), "sawaed": (338, 146), "alayed": (272, 88), "hindaza": (511, 300), "adel": (310, 300), "watania": (633, 373)}
 CLIENTS = {
  "ar": {"eyebrow": "الثقة", "h": "عملاؤنا وتسجيلاتنا", "worked": "عملنا مع", "reg": "مسجّلون لدى",
-        "baan": "بان القابضة، مجموعة الحكير", "almarai": "المراعي", "fakieh": "فقيه لمزارع الدواجن", "watania": "الوطنية"},
+        "baan": "بان القابضة، مجموعة الحكير", "almarai": "المراعي", "fakieh": "فقيه لمزارع الدواجن", "watania": "دواجن الوطنية"},
  "en": {"eyebrow": "Trust", "h": "Clients and registrations", "worked": "Worked with", "reg": "Registered with",
-        "baan": "Baan Holdings, Alhokair Group", "almarai": "Almarai", "fakieh": "Fakieh Poultry Farms", "watania": "Watania"},
+        "baan": "Baan Holdings, Alhokair Group", "almarai": "Almarai", "fakieh": "Fakieh Poultry Farms", "watania": "Watania Poultry"},
 }
 TECH_CLIENTS = {
  "ar": {"eyebrow": "الثقة", "h": "عملاؤنا في قطاع التقنية", "worked": "عملنا مع",
@@ -581,10 +581,9 @@ def serve_html(lang, d):
 
 def clients_html(lang):
     C = CLIENTS[lang]
-    def tfig(k): return f'<figure><div class="plate txt"><span>{esc(C[k])}</span></div></figure>'
     def fig(k): return f'<figure><div class="plate"><img src="/assets/img/client-{k}.webp" alt="{esc(C[k])}" width="{CLIENT_DIMS[k][0]}" height="{CLIENT_DIMS[k][1]}" loading="lazy"></div><figcaption>{esc(C[k])}</figcaption></figure>'
     return f'''<section id="clients"><div class="wrap stack g48"><div class="stack g12" style="max-width:640px"><p class="eyebrow">{C["eyebrow"]}</p><h2>{C["h"]}</h2></div>
-  <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("baan")}</div></div><div class="lg"><h3>{C["reg"]}</h3><div class="logos">{fig("almarai")}{fig("fakieh")}{tfig("watania")}</div></div></div></div></section>
+  <div class="logo-groups"><div class="lg"><h3>{C["worked"]}</h3><div class="logos">{fig("baan")}</div></div><div class="lg"><h3>{C["reg"]}</h3><div class="logos">{fig("almarai")}{fig("fakieh")}{fig("watania")}</div></div></div></div></section>
 '''
 
 def tech_clients_html(lang):

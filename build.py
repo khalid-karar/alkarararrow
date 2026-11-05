@@ -263,10 +263,6 @@ FORM = {
         "mail_note": "Sending opens your email app with a ready message.", "other": "Other / not sure", "req": "This field is required",
         "subject": "New website request"},
 }
-PRODUCT_URL = {"ar": "https://istiqdam360.netlify.app/", "en": "https://istiqdam360.netlify.app/en/"}
-PRODUCT_NAME = {"ar": "منتجنا: استقدام360", "en": "Our product: Istiqdam360"}
-PRODUCT_BLURB = {"ar": "من تقنية سهم الكرار: نظام يدير الاستقدام من العقد حتى وصول العامل.", "en": "From Sahm Alkarar Technology: a system that runs recruitment from contract to arrival."}
-PRODUCT_BTN = {"ar": "تعرّف على استقدام360", "en": "Explore Istiqdam360"}
 LB = {"ar": "إغلاق", "en": "Close"}
 MENU = {"ar": ("القائمة", "إغلاق القائمة"), "en": ("Menu", "Close menu")}
 HOW = {
@@ -652,11 +648,6 @@ def home(lang):
   <div class="wrap stack g48">
     <div class="stack g12" style="max-width:640px"><p class="eyebrow">{h["div_eyebrow"]}</p><h2>{h["div_h"]}</h2></div>
     <div class="cards">{cards}</div>
-  </div>
-</section>
-<section id="product">
-  <div class="wrap">
-    <div class="work"><div class="prod"><img src="/assets/img/istiqdam360-lockup-dark.svg" alt="{T[lang]["divs"]["technology"]["prod_alt"]}" width="1240" height="352" loading="lazy"><div class="prod-side"><p>{PRODUCT_BLURB[lang]}</p><a class="btn gold" href="{path_for(lang, "technology")}#work">{PRODUCT_BTN[lang]}</a></div></div></div>
   </div>
 </section>
 {founder_html(lang)}<section id="contact" class="alt">

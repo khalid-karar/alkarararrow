@@ -374,13 +374,13 @@ PROFILES = {
  "ar": {"eyebrow": "ملفات التعريف", "h": "ملف تعريف لكل قطاع", "p": "اختر القطاع لتحميل ملف التعريف الخاص به.", "soon": "قريبًا",
         "overview": "ملف الشركة العام (PDF)", "foot": "ملفات تعريف القطاعات",
         "names": {"food": "قطاع الأغذية", "technology": "قطاع التقنية", "contracting": "قطاع المقاولات"},
-        "dl": {"food": "ملف قطاع الأغذية", "technology": "تحميل ملف قطاع التقنية (PDF)", "contracting": "ملف قطاع المقاولات"},
-        "file": {"technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
+        "dl": {"food": "تحميل ملف قطاع الأغذية (PDF)", "technology": "تحميل ملف قطاع التقنية (PDF)", "contracting": "ملف قطاع المقاولات"},
+        "file": {"food": "/downloads/Sahm-Alkarar-Food-Profile-AR.pdf", "technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
  "en": {"eyebrow": "Profiles", "h": "A profile for each division", "p": "Choose a division to download its profile.", "soon": "Coming soon",
         "overview": "Company overview (PDF)", "foot": "Division profiles",
         "names": {"food": "Food division", "technology": "Technology division", "contracting": "Contracting division"},
-        "dl": {"food": "Food division profile", "technology": "Download the Technology division profile (Arabic, PDF)", "contracting": "Contracting division profile"},
-        "file": {"technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
+        "dl": {"food": "Download the Food division profile (Arabic, PDF)", "technology": "Download the Technology division profile (Arabic, PDF)", "contracting": "Contracting division profile"},
+        "file": {"food": "/downloads/Sahm-Alkarar-Food-Profile-AR.pdf", "technology": "/downloads/Sahm-Alkarar-Technology-Profile-AR.pdf"}},
 }
 def prof_btn(lang, d, gold=True):
     P = PROFILES[lang]
@@ -709,7 +709,7 @@ def division(lang, d):
 {techx_html(lang) if d == "technology" else ""}{work}{tech_clients_html(lang) if d == "technology" else ""}{clients_html(lang) if d == "food" else ""}{proof_html(lang, d) if d == "contracting" else ""}{how_html(lang, d)}{faq_html(lang, d)}<section id="request" class="alt">
   <div class="wrap cols">
     <div class="stack g28"><div class="stack g12"><h2>{dv["cta_h"]}</h2><p class="muted">{dv["cta_p"]}</p></div>
-      <div class="btns">{prof_btn(lang, d, False) if d == "technology" else ""}<a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>
+      <div class="btns">{prof_btn(lang, d, False) if d in ("technology", "food") else ""}<a class="btn" href="{wa(lang, WA_MSG[lang][d])}" target="_blank" rel="noopener">{WA_LABEL[lang]}</a><a class="btn" href="tel:{PHONE_TEL}"><bdi>{PHONE_DISPLAY}</bdi></a><a class="btn" href="mailto:{EMAIL}"><bdi>{EMAIL}</bdi></a></div></div>
     {form_html(lang, d)}
   </div>
 </section>
